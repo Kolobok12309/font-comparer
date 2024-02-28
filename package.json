@@ -1,0 +1,41 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "author": {
+    "name": "Dmitriy Savinov",
+    "email": "sova123409@gmail.com",
+    "url": "https://github.com/Kolobok12309"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kolobok12309/font-comparer.git"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "packageManager": "pnpm@8.9.2",
+  "files": [
+    ".nuxt",
+    "nuxt.config.ts",
+    "pnpm-lock.yaml"
+  ],
+  "scripts": {
+    "build": "nuxt generate",
+    "dev": "nuxt dev",
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write .",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.10.3",
+    "vue": "^3.4.19",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "prettier": "^3.2.5",
+    "turbo": "^1.12.4"
+  }
+}

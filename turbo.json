@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["pnpm-lock.yaml"],
+  "pipeline": {
+    "build": {
+      "inputs": ["pages/**", "public/**", "nuxt.config.ts", "app.vue"],
+      "outputs": [".nuxt/**", ".output/**", "dist/**"]
+    },
+    "lint": {
+      "inputs": [
+        ".editorconfig",
+        ".prettierrc",
+        ".prettierignore",
+        "pages/**",
+        "public/**",
+        "nuxt.config.ts",
+        "app.vue"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}
