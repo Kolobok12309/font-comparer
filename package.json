@@ -36,6 +36,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.11.4",
     "prettier": "^3.2.5",
+    "stylus": "^0.62.0",
     "turbo": "^1.12.4"
   }
 }

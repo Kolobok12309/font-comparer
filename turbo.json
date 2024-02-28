@@ -3,7 +3,13 @@
   "globalDependencies": ["pnpm-lock.yaml"],
   "pipeline": {
     "build": {
-      "inputs": ["pages/**", "public/**", "nuxt.config.ts", "app.vue"],
+      "inputs": [
+        "pages/**",
+        "components/**",
+        "public/**",
+        "nuxt.config.ts",
+        "app.vue"
+      ],
       "outputs": [".nuxt/**", ".output/**", "dist/**"]
     },
     "lint": {
@@ -12,6 +18,7 @@
         ".prettierrc",
         ".prettierignore",
         "pages/**",
+        "components/**",
         "public/**",
         "nuxt.config.ts",
         "app.vue"
