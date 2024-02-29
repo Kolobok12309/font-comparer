@@ -6,6 +6,7 @@
       "inputs": [
         "pages/**",
         "components/**",
+        "utils/**",
         "public/**",
         "nuxt.config.ts",
         "i18n.config.ts",
@@ -20,6 +21,7 @@
         ".prettierignore",
         "pages/**",
         "components/**",
+        "utils/**",
         "public/**",
         "nuxt.config.ts",
         "i18n.config.ts",

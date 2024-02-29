@@ -1,43 +1,41 @@
 <template>
-  <render />
+  <pre>{{ text }}</pre>
 </template>
 
-<script setup lang="ts">
-import { h } from 'vue';
-
+<script lang="ts" setup>
 const props = defineProps({
   fontFamily: {
     type: String,
-    default: 'Arial-custom',
+    required: true,
   },
 
   src: {
     type: String,
-    default: 'Arial',
+    required: true,
   },
 
   sizeAdjust: {
-    type: Number,
+    type: [Number, String],
     default: null,
   },
 
   ascentOverride: {
-    type: Number,
+    type: [Number, String],
     default: null,
   },
 
   descentOverride: {
-    type: Number,
+    type: [Number, String],
     default: null,
   },
 
   lineGapOverride: {
-    type: Number,
+    type: [Number, String],
     default: null,
   },
 });
 
-const render = () => {
+const text = computed(() => {
   const parts = [
     '@font-face {',
     `  font-family: "${props.fontFamily}";`,
@@ -54,8 +52,6 @@ const render = () => {
 
   parts.push('}');
 
-  const innerHTML = parts.join('\n');
-
-  return h('style', { innerHTML });
-};
+  return parts.join('\n');
+});
 </script>
