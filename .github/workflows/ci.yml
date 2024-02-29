@@ -37,7 +37,7 @@ jobs:
         run: pnpm install
 
       - name: Build app
-        run: turbo run build
+        run: pnpm exec turbo run build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
@@ -67,11 +67,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build app
-        run: turbo run lint
+      - name: Lint code
+        run: pnpm exec turbo run lint
 
   deploy:
     needs: [build, lint]
+    name: Deploy to GH Pages
     runs-on: ubuntu-latest
     timeout-minutes: 5
     environment:
