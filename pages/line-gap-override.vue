@@ -8,14 +8,16 @@
 
     <Blockquote>
       The <b>line-gap-override</b> CSS descriptor for the <b>@font-face</b> at-rule defines the line-gap metric for the font. The line-gap metric is the font recommended line-gap or external leading.
-      <br>
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override"
-        target="_blank"
-        class="text-slate-300 hover:underline"
-      >
-        MDN
-      </a>
+
+      <footer>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override"
+          target="_blank"
+          class="text-slate-300 hover:underline"
+        >
+          MDN
+        </a>
+      </footer>
     </Blockquote>
 
     <pre class="mt-5">

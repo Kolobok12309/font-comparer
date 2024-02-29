@@ -8,6 +8,7 @@
         "components/**",
         "public/**",
         "nuxt.config.ts",
+        "i18n.config.ts",
         "app.vue"
       ],
       "outputs": [".nuxt/**", ".output/**", "dist/**"]
@@ -21,6 +22,7 @@
         "components/**",
         "public/**",
         "nuxt.config.ts",
+        "i18n.config.ts",
         "app.vue"
       ]
     },

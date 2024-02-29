@@ -8,14 +8,16 @@
 
     <Blockquote>
       The ascent-override CSS descriptor for the @font-face at-rule defines the ascent metric for the font. The ascent metric is the height above the baseline that CSS uses to lay out line boxes in an inline formatting context.
-      <br>
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override"
-        target="_blank"
-        class="text-slate-300 hover:underline"
-      >
-        MDN
-      </a>
+
+      <footer>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override"
+          target="_blank"
+          class="text-slate-300 hover:underline"
+        >
+          MDN
+        </a>
+      </footer>
     </Blockquote>
 
     <pre class="mt-5">

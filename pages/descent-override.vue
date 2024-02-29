@@ -8,14 +8,16 @@
 
     <Blockquote>
       The <b>descent-override</b> CSS descriptor for the <b>@font-face</b> at-rule defines the descent metric for the font. The descent metric is the height below the baseline that CSS uses to lay out line boxes in an inline formatting context.
-      <br>
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override"
-        target="_blank"
-        class="text-slate-300 hover:underline"
-      >
-        MDN
-      </a>
+
+      <footer>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override"
+          target="_blank"
+          class="text-slate-300 hover:underline"
+        >
+          MDN
+        </a>
+      </footer>
     </Blockquote>
 
     <pre class="mt-5">

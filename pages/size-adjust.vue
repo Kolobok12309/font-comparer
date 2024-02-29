@@ -10,14 +10,16 @@
       The <b>size-adjust</b> CSS descriptor for the <b>@font-face</b> at-rule defines a multiplier for glyph outlines and metrics associated with this font. This makes it easier to harmonize the designs of various fonts when rendered at the same font size.
       <br>
       The <b>size-adjust</b> descriptor behaves in a similar fashion to the <b>font-size-adjust</b> property. It calculates an adjustment per font by matching ex heights.
-      <br>
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust"
-        target="_blank"
-        class="text-slate-300 hover:underline"
-      >
-        MDN
-      </a>
+
+      <footer>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust"
+          target="_blank"
+          class="text-slate-300 hover:underline"
+        >
+          MDN
+        </a>
+      </footer>
     </Blockquote>
 
     <pre class="mt-5">
