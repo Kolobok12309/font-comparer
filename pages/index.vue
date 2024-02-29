@@ -6,19 +6,19 @@
       {{ t('utilDescription') }}
 
       <NuxtLink
-        to="/size-adjust"
+        :to="localePath('/size-adjust')"
         class="text-slate-300 hover:underline"
         >size-adjust</NuxtLink
       >,
 
       <NuxtLink
-        to="/ascent-override"
+        :to="localePath('/ascent-override')"
         class="text-slate-300 hover:underline"
         >ascent-override</NuxtLink
       >,
 
       <NuxtLink
-        to="/descent-override"
+        :to="localePath('/descent-override')"
         class="text-slate-300 hover:underline"
         >descent-override</NuxtLink
       >
@@ -26,7 +26,7 @@
       {{ t('and') }}
 
       <NuxtLink
-        to="/line-gap-override"
+        :to="localePath('/line-gap-override')"
         class="text-slate-300 hover:underline"
         >line-gap-override</NuxtLink
       >.
@@ -38,6 +38,8 @@
 const { t } = useI18n({
   useScope: 'local',
 });
+
+const localePath = useLocalePath();
 </script>
 
 <i18n lang="json">
