@@ -20,18 +20,73 @@
       </footer>
     </Blockquote>
 
-    <pre class="mt-5">
-@font-face {
-  font-family: local-font;
-  src: local(Local Font);
-  line-gap-override: 125%;
-}
-    </pre>
+    <p class="mt-5">
+      <h3 class="text-lg text-slate-200 font-medium mb-3">
+        {{ t('noteTitle') }}
+      </h3>
+
+      {{ t('noteText1') }}
+      <code>line-height</code>.
+      {{ t('noteText2') }}
+      <code>line-height</code>
+      {{ t('noteText3') }}
+      <code>normal</code>
+    </p>
+
+    <FontFaceCssPreview
+      fontFamily="local-font"
+      src="Local Font"
+      lineGapOverride="125"
+      class="mt-5"
+    />
+
+    <hr class="my-5">
+
+    <FontPreviewSettings
+      v-model:lineGapOverride="lineGapOverride"
+      changeLineGapOverride
+      v-model:ghost="ghost"
+      v-model:border="border"
+      v-model:text="text"
+      class="mt-4"
+    />
+
+    <FontPreview
+      :lineGapOverride="lineGapOverride"
+      :ghost="ghost"
+      :text="text"
+      :border="border"
+      class="mt-4"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
+import { defaultText } from '@/utils/consts';
+
+const lineGapOverride = ref(0);
+const ghost = ref(true);
+const border = ref(true);
+const text = ref(defaultText);
+
+const { t } = useI18n({
+  useScope: 'local',
+});
 </script>
 
-<style>
-</style>
+<i18n lang="json">
+{
+  "en": {
+    "noteTitle": "Simple description",
+    "noteText1": "Default value for",
+    "noteText2": "Enabled if",
+    "noteText3": "not set or with value"
+  },
+  "ru": {
+    "noteTitle": "Упрощенное описание",
+    "noteText1": "Дефолтное значение для",
+    "noteText2": "Чтобы увидеть необходимо не указывать",
+    "noteText3": "или указывать значение"
+  }
+}
+</i18n>

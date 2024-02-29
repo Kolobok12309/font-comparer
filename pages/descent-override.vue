@@ -20,18 +20,39 @@
       </footer>
     </Blockquote>
 
-    <pre class="mt-5">
-@font-face {
-  font-family: local-font;
-  src: local(Local Font);
-  descent-override: 125%;
-}
-    </pre>
+    <FontFaceCssPreview
+      fontFamily="local-font"
+      src="Local Font"
+      descentOverride="125"
+      class="mt-5"
+    />
+
+    <hr class="my-5">
+
+    <FontPreviewSettings
+      v-model:descentOverride="descentOverride"
+      changeDescentOverride
+      v-model:ghost="ghost"
+      v-model:border="border"
+      v-model:text="text"
+      class="mt-4"
+    />
+
+    <FontPreview
+      :descentOverride="descentOverride"
+      :ghost="ghost"
+      :border="border"
+      :text="text"
+      class="mt-4"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
-</script>
+import { defaultText } from '@/utils/consts';
 
-<style>
-</style>
+const descentOverride = ref(20);
+const ghost = ref(true);
+const border = ref(true);
+const text = ref(defaultText);
+</script>
