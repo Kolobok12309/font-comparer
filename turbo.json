@@ -12,6 +12,7 @@
         "i18n.config.ts",
         "app.vue"
       ],
+      "env": ["NUXT_APP_BASE_URL"],
       "outputs": [".nuxt/**", ".output/**", "dist/**"]
     },
     "lint": {

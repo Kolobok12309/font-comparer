@@ -37,13 +37,15 @@ jobs:
         run: pnpm install
 
       - name: Build app
+        env:
+          NUXT_APP_BASE_URL: /font-comparer/
         run: pnpm exec turbo run build
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           name: dist
-          path: .output/public
+          path: ./dist
 
   lint:
     name: Lint code
@@ -85,5 +87,3 @@ jobs:
       - name: Deploy to Github Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: dist
