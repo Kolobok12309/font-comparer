@@ -2,12 +2,13 @@
   <div class="bg-slate-900 rounded-md p-6">
     <BackButton />
 
-    <PageHeader class="mt-2">
-      Descent-override
-    </PageHeader>
+    <PageHeader class="mt-2"> Descent-override </PageHeader>
 
     <Blockquote>
-      The <b>descent-override</b> CSS descriptor for the <b>@font-face</b> at-rule defines the descent metric for the font. The descent metric is the height below the baseline that CSS uses to lay out line boxes in an inline formatting context.
+      The <b>descent-override</b> CSS descriptor for the
+      <b>@font-face</b> at-rule defines the descent metric for the font. The
+      descent metric is the height below the baseline that CSS uses to lay out
+      line boxes in an inline formatting context.
 
       <footer>
         <a
@@ -27,7 +28,7 @@
       class="mt-5"
     />
 
-    <hr class="my-5">
+    <hr class="my-5" />
 
     <FontPreviewSettings
       v-model:descentOverride="descentOverride"

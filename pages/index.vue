@@ -1,8 +1,6 @@
 <template>
   <div class="bg-slate-900 rounded-md p-6">
-    <PageHeader>
-      Font comparer
-    </PageHeader>
+    <PageHeader> Font comparer </PageHeader>
 
     <Blockquote>
       {{ t('utilDescription') }}
@@ -10,24 +8,28 @@
       <NuxtLink
         to="/size-adjust"
         class="text-slate-300 hover:underline"
-      >size-adjust</NuxtLink>,
+        >size-adjust</NuxtLink
+      >,
 
       <NuxtLink
         to="/ascent-override"
         class="text-slate-300 hover:underline"
-      >ascent-override</NuxtLink>,
+        >ascent-override</NuxtLink
+      >,
 
       <NuxtLink
         to="/descent-override"
         class="text-slate-300 hover:underline"
-      >descent-override</NuxtLink>
+        >descent-override</NuxtLink
+      >
 
       {{ t('and') }}
 
       <NuxtLink
         to="/line-gap-override"
         class="text-slate-300 hover:underline"
-      >line-gap-override</NuxtLink>.
+        >line-gap-override</NuxtLink
+      >.
     </Blockquote>
   </div>
 </template>
@@ -50,6 +52,3 @@ const { t } = useI18n({
   }
 }
 </i18n>
-
-<style>
-</style>

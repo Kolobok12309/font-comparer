@@ -3,7 +3,7 @@
   "singleQuote": true,
   "trailingComma": "all",
   "singleAttributePerLine": true,
-  "vueIndentScriptAndStyle": true,
+  "vueIndentScriptAndStyle": false,
   "embeddedLanguageFormatting": "off",
   "arrowParens": "always"
 }

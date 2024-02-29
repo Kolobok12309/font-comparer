@@ -2,12 +2,13 @@
   <div class="bg-slate-900 rounded-md p-6">
     <BackButton />
 
-    <PageHeader class="mt-2">
-      Ascent-override
-    </PageHeader>
+    <PageHeader class="mt-2"> Ascent-override </PageHeader>
 
     <Blockquote>
-      The ascent-override CSS descriptor for the @font-face at-rule defines the ascent metric for the font. The ascent metric is the height above the baseline that CSS uses to lay out line boxes in an inline formatting context.
+      The ascent-override CSS descriptor for the @font-face at-rule defines the
+      ascent metric for the font. The ascent metric is the height above the
+      baseline that CSS uses to lay out line boxes in an inline formatting
+      context.
 
       <footer>
         <a
@@ -27,7 +28,7 @@
       class="mt-5"
     />
 
-    <hr class="my-5">
+    <hr class="my-5" />
 
     <FontPreviewSettings
       v-model:ascentOverride="ascentOverride"

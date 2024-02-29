@@ -2,14 +2,17 @@
   <div class="bg-slate-900 rounded-md p-6">
     <BackButton />
 
-    <PageHeader class="mt-2">
-      Size-adjust
-    </PageHeader>
+    <PageHeader class="mt-2"> Size-adjust </PageHeader>
 
     <Blockquote>
-      The <b>size-adjust</b> CSS descriptor for the <b>@font-face</b> at-rule defines a multiplier for glyph outlines and metrics associated with this font. This makes it easier to harmonize the designs of various fonts when rendered at the same font size.
-      <br>
-      The <b>size-adjust</b> descriptor behaves in a similar fashion to the <b>font-size-adjust</b> property. It calculates an adjustment per font by matching ex heights.
+      The <b>size-adjust</b> CSS descriptor for the <b>@font-face</b> at-rule
+      defines a multiplier for glyph outlines and metrics associated with this
+      font. This makes it easier to harmonize the designs of various fonts when
+      rendered at the same font size.
+      <br />
+      The <b>size-adjust</b> descriptor behaves in a similar fashion to the
+      <b>font-size-adjust</b> property. It calculates an adjustment per font by
+      matching ex heights.
 
       <footer>
         <a
@@ -29,7 +32,7 @@
       class="mt-5"
     />
 
-    <hr class="my-5">
+    <hr class="my-5" />
 
     <FontPreviewSettings
       v-model:sizeAdjust="sizeAdjust"
@@ -58,4 +61,3 @@ const ghost = ref(true);
 const border = ref(true);
 const text = ref(defaultText);
 </script>
-

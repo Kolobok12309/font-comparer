@@ -7,7 +7,7 @@
     <p v-if="changeSizeAdjust">
       Size-adjust: <b>{{ sizeAdjust }}%</b>
 
-      <br>
+      <br />
 
       <input
         v-model="compSizeAdjust"
@@ -16,13 +16,13 @@
         min="0"
         max="200"
         step="0.1"
-      >
+      />
     </p>
 
     <p v-if="changeAscentOverride">
       Ascent-override: <b>{{ ascentOverride }}%</b>
 
-      <br>
+      <br />
 
       <input
         v-model="compAscentOverride"
@@ -31,13 +31,13 @@
         min="0"
         max="200"
         step="0.1"
-      >
+      />
     </p>
 
     <p v-if="changeDescentOverride">
       Descent-override: <b>{{ descentOverride }}%</b>
 
-      <br>
+      <br />
 
       <input
         v-model="compDescentOverride"
@@ -46,13 +46,13 @@
         min="0"
         max="200"
         step="0.1"
-      >
+      />
     </p>
 
     <p v-if="changeLineGapOverride">
       Line-gap-override: <b>{{ lineGapOverride }}%</b>
 
-      <br>
+      <br />
 
       <input
         v-model="compLineGapOverride"
@@ -61,7 +61,7 @@
         min="0"
         max="100"
         step="0.1"
-      >
+      />
     </p>
 
     <div class="flex">
@@ -70,7 +70,7 @@
           v-model="compGhost"
           type="checkbox"
           class="mr-2"
-        >
+        />
 
         {{ t('ghost') }}
       </label>
@@ -80,13 +80,13 @@
           v-model="compBorder"
           type="checkbox"
           class="mr-2"
-        >
+        />
 
         {{ t('border') }}
       </label>
     </div>
 
-    <br>
+    <br />
 
     <details>
       <summary class="cursor-pointer">{{ t('textSummary') }}</summary>
