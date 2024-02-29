@@ -75,6 +75,9 @@ jobs:
     name: Deploy to GH Pages
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
