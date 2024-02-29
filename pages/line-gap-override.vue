@@ -20,18 +20,18 @@
       </footer>
     </Blockquote>
 
-    <p class="mt-5">
+    <div class="mt-5">
       <h3 class="text-lg text-slate-200 font-medium mb-3">
         {{ t('noteTitle') }}
       </h3>
 
       {{ t('noteText1') }}
-      <code>line-height</code>.
+      <code class="p-1 rounded-md bg-slate-800">line-height</code>.
       {{ t('noteText2') }}
-      <code>line-height</code>
+      <code class="p-1 rounded-md bg-slate-800">line-height</code>
       {{ t('noteText3') }}
-      <code>normal</code>
-    </p>
+      <code class="p-1 rounded-md bg-slate-800">normal</code>
+    </div>
 
     <FontFaceCssPreview
       fontFamily="local-font"
