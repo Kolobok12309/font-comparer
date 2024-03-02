@@ -44,12 +44,13 @@ const render = () => {
     `  src: local('${props.src}');`,
   ];
 
-  if (props.sizeAdjust) parts.push(`  size-adjust: ${props.sizeAdjust}%;`);
-  if (props.ascentOverride)
+  if (props.sizeAdjust !== null)
+    parts.push(`  size-adjust: ${props.sizeAdjust}%;`);
+  if (props.ascentOverride !== null)
     parts.push(`  ascent-override: ${props.ascentOverride}%;`);
-  if (props.descentOverride)
+  if (props.descentOverride !== null)
     parts.push(`  descent-override: ${props.descentOverride}%;`);
-  if (props.lineGapOverride)
+  if (props.lineGapOverride !== null)
     parts.push(`  line-gap-override: ${props.lineGapOverride}%;`);
 
   parts.push('}');

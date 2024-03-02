@@ -25,6 +25,14 @@
       </footer>
     </Blockquote>
 
+    <div class="mt-5">
+      <h3 class="text-lg text-slate-200 font-medium mb-3">
+        {{ t('noteTitle') }}
+      </h3>
+
+      {{ t('noteText') }}
+    </div>
+
     <FontFaceCssPreview
       fontFamily="local-font"
       src="Local Font"
@@ -39,6 +47,7 @@
       changeSizeAdjust
       v-model:ghost="ghost"
       v-model:border="border"
+      v-model:size="size"
       v-model:text="text"
       class="mt-4"
     />
@@ -47,6 +56,7 @@
       :sizeAdjust="sizeAdjust"
       :ghost="ghost"
       :border="border"
+      :size="size"
       :text="text"
       class="mt-4"
     />
@@ -59,5 +69,23 @@ import { defaultText } from '@/utils/consts';
 const sizeAdjust = ref(100);
 const ghost = ref(true);
 const border = ref(true);
+const size = ref(true);
 const text = ref(defaultText);
+
+const { t } = useI18n({
+  useScope: 'local',
+});
 </script>
+
+<i18n lang="json">
+{
+  "en": {
+    "noteTitle": "Simple description",
+    "noteText": ""
+  },
+  "ru": {
+    "noteTitle": "Упрощенное описание",
+    "noteText": ""
+  }
+}
+</i18n>

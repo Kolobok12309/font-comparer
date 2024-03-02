@@ -47,6 +47,7 @@
       changeLineGapOverride
       v-model:ghost="ghost"
       v-model:border="border"
+      v-model:size="size"
       v-model:text="text"
       class="mt-4"
     />
@@ -56,6 +57,7 @@
       :ghost="ghost"
       :text="text"
       :border="border"
+      :size="size"
       class="mt-4"
     />
   </div>
@@ -64,9 +66,10 @@
 <script lang="ts" setup>
 import { defaultText } from '@/utils/consts';
 
-const lineGapOverride = ref(0);
+const lineGapOverride = ref(3);
 const ghost = ref(true);
 const border = ref(true);
+const size = ref(true);
 const text = ref(defaultText);
 
 const { t } = useI18n({

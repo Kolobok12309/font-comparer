@@ -10,7 +10,7 @@
       <br />
 
       <input
-        v-model="compSizeAdjust"
+        v-model.number="compSizeAdjust"
         class="w-full"
         type="range"
         min="0"
@@ -25,7 +25,7 @@
       <br />
 
       <input
-        v-model="compAscentOverride"
+        v-model.number="compAscentOverride"
         class="w-full"
         type="range"
         min="0"
@@ -40,7 +40,7 @@
       <br />
 
       <input
-        v-model="compDescentOverride"
+        v-model.number="compDescentOverride"
         class="w-full"
         type="range"
         min="0"
@@ -55,7 +55,7 @@
       <br />
 
       <input
-        v-model="compLineGapOverride"
+        v-model.number="compLineGapOverride"
         class="w-full"
         type="range"
         min="0"
@@ -83,6 +83,16 @@
         />
 
         {{ t('border') }}
+      </label>
+
+      <label class="flex items-center p-2 ml-2">
+        <input
+          v-model="compSize"
+          type="checkbox"
+          class="mr-2"
+        />
+
+        {{ t('size') }}
       </label>
     </div>
 
@@ -172,6 +182,11 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+
+  size: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits([
@@ -184,6 +199,7 @@ const emit = defineEmits([
   'update:ghost',
   'update:text',
   'update:border',
+  'update:size',
 ]);
 
 const {
@@ -196,6 +212,7 @@ const {
   ghost: compGhost,
   text: compText,
   border: compBorder,
+  size: compSize,
 } = useMapSync(emit, props);
 
 const { t } = useI18n({
@@ -209,12 +226,14 @@ const { t } = useI18n({
     "title": "Preview settings",
     "ghost": "Ghost",
     "border": "Border",
+    "size": "Show sizes",
     "textSummary": "Text"
   },
   "ru": {
     "title": "Настройки превью",
     "ghost": "Призрак",
     "border": "Border",
+    "size": "Показывать размеры",
     "textSummary": "Текст"
   }
 }

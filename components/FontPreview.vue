@@ -19,23 +19,59 @@
       class="font-preview__ghost-container relative"
     >
       <div
-        ref="ghostOrigRef"
         class="font-preview__text font-preview__text_orig opacity-70 absolute top-0 select-none leading-[normal]"
         :class="{
           'border border-green-900': border,
         }"
       >
-        {{ text }}
+        <span
+          ref="ghostOrigRef"
+          class="inline-block whitespace-pre-line"
+        >
+          {{ text }}
+        </span>
+
+        <div
+          v-if="size"
+          class="absolute left-48 bottom-full font-sans whitespace-nowrap"
+          :class="{
+            'border border-green-900': border,
+          }"
+        >
+          {{ t('shortWidth') }}: {{ ghostOrigSizes.width }}
+
+          <br>
+
+          {{ t('shortHeight') }}: {{ ghostOrigSizes.height }}
+        </div>
       </div>
 
       <div
-        ref="ghostAdjustedRef"
         class="font-preview__text font-preview__text_adjusted opacity-30 absolute top-0 select-none leading-[normal]"
         :class="{
           'border border-red-900': border,
         }"
       >
-        {{ text }}
+        <span
+          ref="ghostAdjustedRef"
+          class="inline-block whitespace-pre-line"
+        >
+          {{ text }}
+        </span>
+
+        <div
+          v-if="size"
+          class="absolute right-0 bottom-full font-sans whitespace-nowrap"
+          :class="{
+            'border border-red-900': border,
+          }"
+        >
+          {{ t('shortWidth') }}: {{ ghostAdjustSizes.width }}
+
+          <br>
+
+          {{ t('shortHeight') }}: {{ ghostAdjustSizes.height }}
+        </div>
       </div>
     </div>
 
@@ -49,12 +85,31 @@
         </h4>
 
         <div
-          class="font-preview__text font-preview__text_orig leading-[normal]"
+          class="font-preview__text font-preview__text_orig leading-[normal] relative"
           :class="{
             'border border-green-900': border,
           }"
         >
-          {{ text }}
+          <span
+            ref="origRef"
+            class="inline-block whitespace-pre-line"
+          >
+            {{ text }}
+          </span>
+
+          <div
+            v-if="size"
+            class="absolute right-0 bottom-full font-sans whitespace-nowrap"
+            :class="{
+              'border border-green-900': border,
+            }"
+          >
+            {{ t('shortWidth') }}: {{ origSizes.width }}
+
+            <br>
+
+            {{ t('shortHeight') }}: {{ origSizes.height }}
+          </div>
         </div>
       </div>
 
@@ -64,12 +119,31 @@
         </h4>
 
         <div
-          class="font-preview__text font-preview__text_adjusted leading-[normal]"
+          class="font-preview__text font-preview__text_adjusted leading-[normal] relative"
           :class="{
             'border border-red-900': border,
           }"
         >
-          {{ text }}
+          <span
+            ref="adjustRef"
+            class="inline-block whitespace-pre-line"
+          >
+            {{ text }}
+          </span>
+
+          <div
+            v-if="size"
+            class="absolute right-0 bottom-full font-sans whitespace-nowrap"
+            :class="{
+              'border border-red-900': border,
+            }"
+          >
+            {{ t('shortWidth') }}: {{ adjustSizes.width }}
+
+            <br>
+
+            {{ t('shortHeight') }}: {{ adjustSizes.height }}
+          </div>
         </div>
       </div>
     </div>
@@ -122,22 +196,31 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-});
 
-const ghostContainerRef = ref<HTMLDivElement | null>(null);
-const ghostOrigRef = ref<HTMLDivElement | null>(null);
-const ghostAdjustedRef = ref<HTMLDivElement | null>(null);
+  size: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 const { t } = useI18n({
   useScope: 'local',
 });
 
+const ghostContainerRef = ref<HTMLDivElement | null>(null);
+
+const origRef = ref<HTMLDivElement | null>(null);
+const origSizes = useSizes(origRef);
+const adjustRef = ref<HTMLDivElement | null>(null);
+const adjustSizes = useSizes(adjustRef);
+
+const ghostOrigRef = ref<HTMLDivElement | null>(null);
+const ghostOrigSizes = useSizes(ghostOrigRef);
+const ghostAdjustedRef = ref<HTMLDivElement | null>(null);
+const ghostAdjustSizes = useSizes(ghostAdjustedRef);
+
 const updateGhostHeight = () => {
-  const newHeight = Math.max(
-    0,
-    ghostOrigRef.value!.offsetHeight,
-    ghostAdjustedRef.value!.offsetHeight,
-  );
+  const newHeight = Math.max(0, ghostOrigSizes.height, ghostAdjustSizes.height);
 
   requestAnimationFrame(() => {
     ghostContainerRef.value!.style.height = `${newHeight}px`;
@@ -145,15 +228,7 @@ const updateGhostHeight = () => {
 };
 
 watch(
-  () => [
-    props.ghost,
-    props.src,
-    props.sizeAdjust,
-    props.ascentOverride,
-    props.descentOverride,
-    props.lineGapOverride,
-    props.text,
-  ],
+  () => [props.ghost, ghostAdjustSizes.height],
   async ([newGhost]) => {
     if (!newGhost) return;
 
@@ -174,12 +249,16 @@ onMounted(() => {
   "en": {
     "title": "Preview",
     "orig": "Original",
-    "adjusted": "Adjusted"
+    "adjusted": "Adjusted",
+    "shortWidth": "w",
+    "shortHeight": "h"
   },
   "ru": {
     "title": "Превью",
     "orig": "Оригинал",
-    "adjusted": "Измененный"
+    "adjusted": "Измененный",
+    "shortWidth": "ш",
+    "shortHeight": "в"
   }
 }
 </i18n>
