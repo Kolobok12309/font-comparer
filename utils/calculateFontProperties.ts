@@ -1,80 +1,64 @@
 import { getRandomString } from './random';
 
-export const resizeText = async (
-  input: HTMLElement,
-  target: HTMLElement,
-  fontFace: CSSFontFaceRule,
-  dimProperty: 'width' | 'height',
-  cssProperty: 'sizeAdjust' | 'ascentOverride',
-  unit: string,
-  spacing: number,
+export const calculateNearArg = async (
+  targetValue: number,
+  src: number,
+  execFunc: (src: number) => number | Promise<number>,
   assumption: number = 0,
 ): Promise<number> => {
-  await rafPromise();
+  const minTarget = targetValue - targetValue * assumption;
+  const maxTarget = targetValue + targetValue * assumption;
+  const checkValue = (v: number) => v >= minTarget && v <= maxTarget;
 
-  const baseDim = input.getBoundingClientRect()[dimProperty];
-  const startDim = target.getBoundingClientRect()[dimProperty];
-
-  const minDim = +(baseDim - baseDim * assumption).toFixed(2);
-  const maxDim = +(baseDim + baseDim * assumption).toFixed(2);
-
-  let increment: number = 1;
-  let directionChanges: number = 0;
+  let step: number = 1;
   let direction: number = 1;
-  // console.log('baseDim', dimProperty, startDim, baseDim);
-  if (startDim === baseDim) return +spacing.toFixed(2);
-  if (startDim > baseDim) {
+
+  let startValue = await execFunc(src);
+  // console.log('target', targetValue, startValue);
+  if (checkValue(startValue)) return +src.toFixed(2);
+  if (startValue > targetValue) {
     direction = -1;
   }
+
   let iterations: number = 0;
-  let prevDiv = Math.abs(baseDim - startDim);
-  while (increment > 0.001 && iterations++ < 1000 && spacing > 0) {
-    spacing = spacing + increment * direction;
+  let prevDiv = Math.abs(targetValue - startValue);
+  while (step >= 0.01 && iterations++ < 1000 && src > 0) {
+    src += step * direction;
 
-    await rafPromise();
+    const value = await execFunc(src);
+    const div = Math.abs(targetValue - value);
 
-    fontFace.style[cssProperty] = `${spacing}${unit}`;
-    const curDim = target.getBoundingClientRect()[dimProperty];
-    const curDiv = Math.abs(baseDim - curDim);
-    // console.log(
-    //   dimProperty,
-    //   baseDim,
-    //   curDim,
-    //   cssProperty,
-    //   target.style[cssProperty],
-    //   spacing,
-    //   increment,
-    //   direction,
-    // );
-    if (+curDim.toFixed(2) >= minDim && +curDim.toFixed(2) <= maxDim) {
-      console.log(`Jackpot on ${iterations} iteration`);
-      return +spacing.toFixed(2);
+    // console.log(`in:${src} out:${value}`);
+    if (checkValue(value)) {
+      // console.log(`Jackpot on ${iterations} iteration`);
+      return +src.toFixed(2);
     }
-    // console.log(
-    //   'dir',
-    //   curDim > baseDim,
-    //   direction === 1,
-    //   curDim < baseDim,
-    //   direction === -1,
-    // );
 
     if (
-      (curDim > baseDim && direction == 1) ||
-      (curDim < baseDim && direction == -1)
+      (value > targetValue && direction === 1) ||
+      (value < targetValue && direction === -1)
     ) {
-      // console.log('Smallest increment');
-      increment *= 0.1;
+      // console.log('anomaly', prevDiv, div, step);
+      // Check what value more near, prev or current
+      if (div > prevDiv) {
+        // rollback prev src
+        // and not change prevDiv
+        src -= step * direction;
+        // Change direction if current
+      } else {
+        direction *= -1;
+        prevDiv = div;
+      }
 
-      // if (curDiv < prevDiv) {
-      // console.log('Direction change');
-      direction *= -1;
-      directionChanges++;
-      // }
+      step *= 0.1;
+    } else {
+      prevDiv = div;
     }
-
-    prevDiv = curDiv;
   }
-  return +spacing.toFixed(2);
+
+  // console.log('out', src, iterations);
+
+  return +src.toFixed(2);
 };
 
 export default async (
@@ -124,7 +108,7 @@ export default async (
   container.appendChild(document.createElement('br'));
   container.appendChild(fallbackContainer);
 
-  mainContainer.innerText = fallbackContainer.innerText = text;
+  mainContainer.textContent = fallbackContainer.textContent = text;
 
   await rafPromise();
 
@@ -134,14 +118,18 @@ export default async (
   await document.fonts.ready;
   console.timeEnd('load-font');
 
-  const sizeAdjust = await resizeText(
-    mainContainer,
-    fallbackContainer,
-    fontFace,
-    'width',
-    'sizeAdjust',
-    '%',
-    100,
+  const startWidth = mainContainer.getBoundingClientRect()['width'];
+  const srcWidth = fallbackContainer.getBoundingClientRect()['width'];
+  const sizeAdjust = await calculateNearArg(
+    startWidth,
+    (startWidth / srcWidth) * 100,
+    async (v) => {
+      await rafPromise();
+
+      fontFace.style.sizeAdjust = `${v}%`;
+
+      return fallbackContainer.getBoundingClientRect()['width'];
+    },
     assumption,
   );
 
@@ -152,14 +140,18 @@ export default async (
 
   await sleep(20);
 
-  const ascentOverride = await resizeText(
-    mainContainer,
-    fallbackContainer,
-    fontFace,
-    'height',
-    'ascentOverride',
-    '%',
-    100,
+  const startHeight = mainContainer.getBoundingClientRect()['height'];
+  const srcHeight = fallbackContainer.getBoundingClientRect()['height'];
+  const ascentOverride = await calculateNearArg(
+    startHeight,
+    (startHeight / srcHeight) * 100,
+    async (v) => {
+      await rafPromise();
+
+      fontFace.style.ascentOverride = `${v}%`;
+
+      return fallbackContainer.getBoundingClientRect()['height'];
+    },
     assumption,
   );
 

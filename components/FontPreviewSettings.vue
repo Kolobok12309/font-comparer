@@ -50,7 +50,7 @@
         class="w-full"
         type="range"
         min="0"
-        max="200"
+        max="300"
         step="0.1"
       />
     </p>
@@ -65,7 +65,7 @@
         class="w-full"
         type="range"
         min="0"
-        max="200"
+        max="300"
         step="0.1"
       />
     </p>
@@ -80,7 +80,7 @@
         class="w-full"
         type="range"
         min="0"
-        max="100"
+        max="150"
         step="0.1"
       />
     </p>

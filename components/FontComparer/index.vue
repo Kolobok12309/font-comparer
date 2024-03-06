@@ -1,120 +1,114 @@
 <template>
   <div>
-    fontFamily:
-    <FontFamilySelector v-model="fontFamily" />
-
-    <br>
-
-    fallback fontFamily:
-    <FontFamilySelector
-      v-model="fallbackFontFamily"
-      fallback
+    <FontPreviewSettings
+      v-model:target="target"
+      changeTarget
+      v-model:src="src"
+      changeSrc
+      v-model:sizeAdjust="sizeAdjust"
+      changeSizeAdjust
+      v-model:ascentOverride="ascentOverride"
+      changeAscentOverride
+      v-model:descentOverride="descentOverride"
+      changeDescentOverride
+      v-model:lineGapOverride="lineGapOverride"
+      changeLineGapOverride
+      v-model:ghost="ghost"
+      v-model:border="border"
+      v-model:text="text"
     />
 
-    <FontFaceCssPreview
-      :fontFamily="`${fontFamily}-fallback`"
-      :src="fallbackFontFamily"
-    />
+    <div class="flex items-center mt-4">
+      <button
+        class="bg-indigo-500 text-slate-200 py-2 px-4 rounded-sm disabled:opacity-75"
+        :disabled="pending"
+        @click="onClickText"
+      >
+        {{ t('calc') }}
+      </button>
+
+      <span
+        v-if="lastCalc"
+        class="ml-4"
+      >
+        Last result <b>size-adjust</b>: {{ lastCalc.sizeAdjust }}, <b>(ascent-override + descent-override + line-gap-override)</b>: {{ lastCalc.lineHeightOpts }}
+      </span>
+    </div>
 
     <details>
-      <summary class="cursor-pointer">Text</summary>
+      <summary class="cursor-pointer">Css <b>@font-face</b></summary>
 
-      <textarea
-        v-model="text"
-        rows="10"
-        placeholder="Example text"
-        class="w-full mt-4 p-4 bg-slate-800 rounded-md"
-      ></textarea>
+      <FontFaceCssPreview
+        :fontFamily="`${target}-${src}`"
+        :src="src"
+        :sizeAdjust="sizeAdjust"
+        :ascentOverride="ascentOverride"
+        :descentOverride="descentOverride"
+        :lineGapOverride="lineGapOverride"
+      />
     </details>
 
-    <button @click="onClickText">
-      Calculate text
-    </button>
-
-    <button @click="onClick">
-      Calculate
-    </button>
-
-    <input
-      v-model.number="assumption"
-      type="number"
-    >
-
-    <button @click="onStop">
-      Stop
-    </button>
-
-    <div>
-      <p
-        v-for="res in alphabetAnalyze"
-        :key="res"
-      >
-        {{ res }}
-      </p>
-    </div>
+    <FontPreview
+      :target="target"
+      :src="src"
+      :sizeAdjust="sizeAdjust"
+      :ascentOverride="ascentOverride"
+      :descentOverride="descentOverride"
+      :lineGapOverride="lineGapOverride"
+      :ghost="ghost"
+      :border="border"
+      :text="text"
+      size
+      class="mt-4"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { defaultText, enAlphabet } from '@/utils/consts';
+import { defaultText } from '@/utils/consts';
 
-const fontFamily = ref('Arial');
-const fallbackFontFamily = ref('Arial');
+const { t } = useI18n({
+  useScope: 'local',
+});
+
+const target = ref('Montserrat');
+const src = ref('Arial');
 const assumption = ref(0);
 const text = ref(defaultText);
 
-const alphabetAnalyze = ref<string[]>([]);
-let isStopped = false;
+const sizeAdjust = ref(100);
+const ascentOverride = ref(100);
+const descentOverride = ref(0);
+const lineGapOverride = ref(0);
+const ghost = ref(false);
+const border = ref(false);
 
-const onStop = () => {
-  isStopped = true;
-};
-const onClick = async () => {
-  alphabetAnalyze.value = [];
-  isStopped = false;
-
-  await enAlphabet
-    .split('')
-    .reduce(async (acc: Promise<void>, letter: string) => {
-      await acc;
-      if (isStopped) return;
-
-      const letterLine = letter.repeat(100);
-      const testString = `${letterLine}\n`.repeat(100).slice(0, -1);
-
-      console.time(
-        `calculate letter ${letter} for ${fontFamily.value}:${fallbackFontFamily.value}`,
-      );
-      const res = await calculateFontProperties(
-        fontFamily.value,
-        fallbackFontFamily.value,
-        testString,
-        assumption.value,
-      );
-      console.timeEnd(
-        `calculate letter ${letter} for ${fontFamily.value}:${fallbackFontFamily.value}`,
-      );
-
-      alphabetAnalyze.value.push(
-        `${letter}: sizeAdjust:${res.sizeAdjust} overrideOpts:${res.lineHeightOpts}`,
-      );
-    }, Promise.resolve());
-};
+const lastCalc = ref<{
+  sizeAdjust: number;
+  lineHeightOpts: number;
+} | null>(null);
+watch([target, src], () => {
+  lastCalc.value = null;
+});
+const pending = ref(false);
 
 const onClickText = async () => {
-  console.time(
-    `calculate text for ${fontFamily.value}:${fallbackFontFamily.value}`,
-  );
+  pending.value = true;
+
+  console.time(`calculate text for ${target.value}:${src.value}`);
   const res = await calculateFontProperties(
-    fontFamily.value,
-    fallbackFontFamily.value,
+    target.value,
+    src.value,
     text.value,
     assumption.value,
   );
-  console.timeEnd(
-    `calculate text for ${fontFamily.value}:${fallbackFontFamily.value}`,
-  );
+  console.timeEnd(`calculate text for ${target.value}:${src.value}`);
 
+  pending.value = false;
+  lastCalc.value = res;
+
+  sizeAdjust.value = res.sizeAdjust;
+  ascentOverride.value = res.lineHeightOpts;
   console.log('res', res);
 };
 </script>
@@ -122,10 +116,10 @@ const onClickText = async () => {
 <i18n lang="json">
 {
   "en": {
-
+    "calc": "Calculate"
   },
   "ru": {
-
+    "calc": "Вычислить"
   }
 }
 </i18n>
