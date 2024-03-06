@@ -30,7 +30,18 @@
         class="text-slate-300 hover:underline"
         >line-gap-override</NuxtLink
       >.
+
+      <br>
+
+      <NuxtLink
+        :to="localePath('/preview')"
+        class="text-slate-300 hover:underline"
+      >
+        Full preview
+      </NuxtLink>
     </Blockquote>
+
+    <FontComparer />
   </div>
 </template>
 

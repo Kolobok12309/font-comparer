@@ -9,6 +9,10 @@
     <hr class="my-5" />
 
     <FontPreviewSettings
+      v-model:target="target"
+      changeTarget
+      v-model:src="src"
+      changeSrc
       v-model:sizeAdjust="sizeAdjust"
       changeSizeAdjust
       v-model:ascentOverride="ascentOverride"
@@ -24,7 +28,22 @@
       class="mt-4"
     />
 
+    <details>
+      <summary class="cursor-pointer">Css <b>@font-face</b></summary>
+
+      <FontFaceCssPreview
+        :fontFamily="`${target}-${src}`"
+        :src="src"
+        :sizeAdjust="sizeAdjust"
+        :ascentOverride="ascentOverride"
+        :descentOverride="descentOverride"
+        :lineGapOverride="lineGapOverride"
+      />
+    </details>
+
     <FontPreview
+      :target="target"
+      :src="src"
       :sizeAdjust="sizeAdjust"
       :ascentOverride="ascentOverride"
       :descentOverride="descentOverride"
@@ -45,6 +64,8 @@ const { t } = useI18n({
   useScope: 'local',
 });
 
+const target = ref('Arial');
+const src = ref('Arial');
 const sizeAdjust = ref(100);
 const ascentOverride = ref(90);
 const descentOverride = ref(20);

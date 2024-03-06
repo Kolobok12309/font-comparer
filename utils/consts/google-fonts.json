@@ -1,0 +1,3020 @@
+{
+  "ABeeZee": {
+    "category": "sans-serif"
+  },
+  "Abel": {
+    "category": "sans-serif"
+  },
+  "Abhaya Libre": {
+    "category": "serif"
+  },
+  "Abril Fatface": {
+    "category": "display"
+  },
+  "Aclonica": {
+    "category": "sans-serif"
+  },
+  "Acme": {
+    "category": "sans-serif"
+  },
+  "Actor": {
+    "category": "sans-serif"
+  },
+  "Adamina": {
+    "category": "serif"
+  },
+  "Advent Pro": {
+    "category": "sans-serif"
+  },
+  "Aguafina Script": {
+    "category": "handwriting"
+  },
+  "Akronim": {
+    "category": "display"
+  },
+  "Aladin": {
+    "category": "handwriting"
+  },
+  "Alata": {
+    "category": "sans-serif"
+  },
+  "Alatsi": {
+    "category": "sans-serif"
+  },
+  "Aldrich": {
+    "category": "sans-serif"
+  },
+  "Alef": {
+    "category": "sans-serif"
+  },
+  "Alegreya": {
+    "category": "serif"
+  },
+  "Alegreya SC": {
+    "category": "serif"
+  },
+  "Alegreya Sans": {
+    "category": "sans-serif"
+  },
+  "Alegreya Sans SC": {
+    "category": "sans-serif"
+  },
+  "Aleo": {
+    "category": "serif"
+  },
+  "Alex Brush": {
+    "category": "handwriting"
+  },
+  "Alfa Slab One": {
+    "category": "display"
+  },
+  "Alice": {
+    "category": "serif"
+  },
+  "Alike": {
+    "category": "serif"
+  },
+  "Alike Angular": {
+    "category": "serif"
+  },
+  "Allan": {
+    "category": "display"
+  },
+  "Allerta": {
+    "category": "sans-serif"
+  },
+  "Allerta Stencil": {
+    "category": "sans-serif"
+  },
+  "Allura": {
+    "category": "handwriting"
+  },
+  "Almarai": {
+    "category": "sans-serif"
+  },
+  "Almendra": {
+    "category": "serif"
+  },
+  "Almendra Display": {
+    "category": "display"
+  },
+  "Almendra SC": {
+    "category": "serif"
+  },
+  "Amarante": {
+    "category": "display"
+  },
+  "Amaranth": {
+    "category": "sans-serif"
+  },
+  "Amatic SC": {
+    "category": "handwriting"
+  },
+  "Amethysta": {
+    "category": "serif"
+  },
+  "Amiko": {
+    "category": "sans-serif"
+  },
+  "Amiri": {
+    "category": "serif"
+  },
+  "Amita": {
+    "category": "handwriting"
+  },
+  "Anaheim": {
+    "category": "sans-serif"
+  },
+  "Andada": {
+    "category": "serif"
+  },
+  "Andika": {
+    "category": "sans-serif"
+  },
+  "Angkor": {
+    "category": "display"
+  },
+  "Annie Use Your Telescope": {
+    "category": "handwriting"
+  },
+  "Anonymous Pro": {
+    "category": "monospace"
+  },
+  "Antic": {
+    "category": "sans-serif"
+  },
+  "Antic Didone": {
+    "category": "serif"
+  },
+  "Antic Slab": {
+    "category": "serif"
+  },
+  "Anton": {
+    "category": "sans-serif"
+  },
+  "Arapey": {
+    "category": "serif"
+  },
+  "Arbutus": {
+    "category": "display"
+  },
+  "Arbutus Slab": {
+    "category": "serif"
+  },
+  "Architects Daughter": {
+    "category": "handwriting"
+  },
+  "Archivo": {
+    "category": "sans-serif"
+  },
+  "Archivo Black": {
+    "category": "sans-serif"
+  },
+  "Archivo Narrow": {
+    "category": "sans-serif"
+  },
+  "Aref Ruqaa": {
+    "category": "serif"
+  },
+  "Arima Madurai": {
+    "category": "display"
+  },
+  "Arimo": {
+    "category": "sans-serif"
+  },
+  "Arizonia": {
+    "category": "handwriting"
+  },
+  "Armata": {
+    "category": "sans-serif"
+  },
+  "Arsenal": {
+    "category": "sans-serif"
+  },
+  "Artifika": {
+    "category": "serif"
+  },
+  "Arvo": {
+    "category": "serif"
+  },
+  "Arya": {
+    "category": "sans-serif"
+  },
+  "Asap": {
+    "category": "sans-serif"
+  },
+  "Asap Condensed": {
+    "category": "sans-serif"
+  },
+  "Asar": {
+    "category": "serif"
+  },
+  "Asset": {
+    "category": "display"
+  },
+  "Assistant": {
+    "category": "sans-serif"
+  },
+  "Astloch": {
+    "category": "display"
+  },
+  "Asul": {
+    "category": "sans-serif"
+  },
+  "Athiti": {
+    "category": "sans-serif"
+  },
+  "Atma": {
+    "category": "display"
+  },
+  "Atomic Age": {
+    "category": "display"
+  },
+  "Aubrey": {
+    "category": "display"
+  },
+  "Audiowide": {
+    "category": "display"
+  },
+  "Autour One": {
+    "category": "display"
+  },
+  "Average": {
+    "category": "serif"
+  },
+  "Average Sans": {
+    "category": "sans-serif"
+  },
+  "Averia Gruesa Libre": {
+    "category": "display"
+  },
+  "Averia Libre": {
+    "category": "display"
+  },
+  "Averia Sans Libre": {
+    "category": "display"
+  },
+  "Averia Serif Libre": {
+    "category": "display"
+  },
+  "B612": {
+    "category": "sans-serif"
+  },
+  "B612 Mono": {
+    "category": "monospace"
+  },
+  "Bad Script": {
+    "category": "handwriting"
+  },
+  "Bahiana": {
+    "category": "display"
+  },
+  "Bahianita": {
+    "category": "display"
+  },
+  "Bai Jamjuree": {
+    "category": "sans-serif"
+  },
+  "Baloo 2": {
+    "category": "display"
+  },
+  "Baloo Bhai 2": {
+    "category": "display"
+  },
+  "Baloo Bhaina 2": {
+    "category": "display"
+  },
+  "Baloo Chettan 2": {
+    "category": "display"
+  },
+  "Baloo Da 2": {
+    "category": "display"
+  },
+  "Baloo Paaji 2": {
+    "category": "display"
+  },
+  "Baloo Tamma 2": {
+    "category": "display"
+  },
+  "Baloo Tammudu 2": {
+    "category": "display"
+  },
+  "Baloo Thambi 2": {
+    "category": "display"
+  },
+  "Balsamiq Sans": {
+    "category": "display"
+  },
+  "Balthazar": {
+    "category": "serif"
+  },
+  "Bangers": {
+    "category": "display"
+  },
+  "Barlow": {
+    "category": "sans-serif"
+  },
+  "Barlow Condensed": {
+    "category": "sans-serif"
+  },
+  "Barlow Semi Condensed": {
+    "category": "sans-serif"
+  },
+  "Barriecito": {
+    "category": "display"
+  },
+  "Barrio": {
+    "category": "display"
+  },
+  "Basic": {
+    "category": "sans-serif"
+  },
+  "Baskervville": {
+    "category": "serif"
+  },
+  "Battambang": {
+    "category": "display"
+  },
+  "Baumans": {
+    "category": "display"
+  },
+  "Bayon": {
+    "category": "display"
+  },
+  "Be Vietnam": {
+    "category": "sans-serif"
+  },
+  "Bebas Neue": {
+    "category": "display"
+  },
+  "Belgrano": {
+    "category": "serif"
+  },
+  "Bellefair": {
+    "category": "serif"
+  },
+  "Belleza": {
+    "category": "sans-serif"
+  },
+  "Bellota": {
+    "category": "display"
+  },
+  "Bellota Text": {
+    "category": "display"
+  },
+  "BenchNine": {
+    "category": "sans-serif"
+  },
+  "Bentham": {
+    "category": "serif"
+  },
+  "Berkshire Swash": {
+    "category": "handwriting"
+  },
+  "Beth Ellen": {
+    "category": "handwriting"
+  },
+  "Bevan": {
+    "category": "display"
+  },
+  "Big Shoulders Display": {
+    "category": "display"
+  },
+  "Big Shoulders Text": {
+    "category": "display"
+  },
+  "Bigelow Rules": {
+    "category": "display"
+  },
+  "Bigshot One": {
+    "category": "display"
+  },
+  "Bilbo": {
+    "category": "handwriting"
+  },
+  "Bilbo Swash Caps": {
+    "category": "handwriting"
+  },
+  "BioRhyme": {
+    "category": "serif"
+  },
+  "BioRhyme Expanded": {
+    "category": "serif"
+  },
+  "Biryani": {
+    "category": "sans-serif"
+  },
+  "Bitter": {
+    "category": "serif"
+  },
+  "Black And White Picture": {
+    "category": "sans-serif"
+  },
+  "Black Han Sans": {
+    "category": "sans-serif"
+  },
+  "Black Ops One": {
+    "category": "display"
+  },
+  "Blinker": {
+    "category": "sans-serif"
+  },
+  "Bokor": {
+    "category": "display"
+  },
+  "Bonbon": {
+    "category": "handwriting"
+  },
+  "Boogaloo": {
+    "category": "display"
+  },
+  "Bowlby One": {
+    "category": "display"
+  },
+  "Bowlby One SC": {
+    "category": "display"
+  },
+  "Brawler": {
+    "category": "serif"
+  },
+  "Bree Serif": {
+    "category": "serif"
+  },
+  "Bubblegum Sans": {
+    "category": "display"
+  },
+  "Bubbler One": {
+    "category": "sans-serif"
+  },
+  "Buda": {
+    "category": "display"
+  },
+  "Buenard": {
+    "category": "serif"
+  },
+  "Bungee": {
+    "category": "display"
+  },
+  "Bungee Hairline": {
+    "category": "display"
+  },
+  "Bungee Inline": {
+    "category": "display"
+  },
+  "Bungee Outline": {
+    "category": "display"
+  },
+  "Bungee Shade": {
+    "category": "display"
+  },
+  "Butcherman": {
+    "category": "display"
+  },
+  "Butterfly Kids": {
+    "category": "handwriting"
+  },
+  "Cabin": {
+    "category": "sans-serif"
+  },
+  "Cabin Condensed": {
+    "category": "sans-serif"
+  },
+  "Cabin Sketch": {
+    "category": "display"
+  },
+  "Caesar Dressing": {
+    "category": "display"
+  },
+  "Cagliostro": {
+    "category": "sans-serif"
+  },
+  "Cairo": {
+    "category": "sans-serif"
+  },
+  "Caladea": {
+    "category": "serif"
+  },
+  "Calistoga": {
+    "category": "display"
+  },
+  "Calligraffitti": {
+    "category": "handwriting"
+  },
+  "Cambay": {
+    "category": "sans-serif"
+  },
+  "Cambo": {
+    "category": "serif"
+  },
+  "Candal": {
+    "category": "sans-serif"
+  },
+  "Cantarell": {
+    "category": "sans-serif"
+  },
+  "Cantata One": {
+    "category": "serif"
+  },
+  "Cantora One": {
+    "category": "sans-serif"
+  },
+  "Capriola": {
+    "category": "sans-serif"
+  },
+  "Cardo": {
+    "category": "serif"
+  },
+  "Carme": {
+    "category": "sans-serif"
+  },
+  "Carrois Gothic": {
+    "category": "sans-serif"
+  },
+  "Carrois Gothic SC": {
+    "category": "sans-serif"
+  },
+  "Carter One": {
+    "category": "display"
+  },
+  "Catamaran": {
+    "category": "sans-serif"
+  },
+  "Caudex": {
+    "category": "serif"
+  },
+  "Caveat": {
+    "category": "handwriting"
+  },
+  "Caveat Brush": {
+    "category": "handwriting"
+  },
+  "Cedarville Cursive": {
+    "category": "handwriting"
+  },
+  "Ceviche One": {
+    "category": "display"
+  },
+  "Chakra Petch": {
+    "category": "sans-serif"
+  },
+  "Changa": {
+    "category": "sans-serif"
+  },
+  "Changa One": {
+    "category": "display"
+  },
+  "Chango": {
+    "category": "display"
+  },
+  "Charm": {
+    "category": "handwriting"
+  },
+  "Charmonman": {
+    "category": "handwriting"
+  },
+  "Chathura": {
+    "category": "sans-serif"
+  },
+  "Chau Philomene One": {
+    "category": "sans-serif"
+  },
+  "Chela One": {
+    "category": "display"
+  },
+  "Chelsea Market": {
+    "category": "display"
+  },
+  "Chenla": {
+    "category": "display"
+  },
+  "Cherry Cream Soda": {
+    "category": "display"
+  },
+  "Cherry Swash": {
+    "category": "display"
+  },
+  "Chewy": {
+    "category": "display"
+  },
+  "Chicle": {
+    "category": "display"
+  },
+  "Chilanka": {
+    "category": "handwriting"
+  },
+  "Chivo": {
+    "category": "sans-serif"
+  },
+  "Chonburi": {
+    "category": "display"
+  },
+  "Cinzel": {
+    "category": "serif"
+  },
+  "Cinzel Decorative": {
+    "category": "display"
+  },
+  "Clicker Script": {
+    "category": "handwriting"
+  },
+  "Coda": {
+    "category": "display"
+  },
+  "Coda Caption": {
+    "category": "sans-serif"
+  },
+  "Codystar": {
+    "category": "display"
+  },
+  "Coiny": {
+    "category": "display"
+  },
+  "Combo": {
+    "category": "display"
+  },
+  "Comfortaa": {
+    "category": "display"
+  },
+  "Comic Neue": {
+    "category": "handwriting"
+  },
+  "Coming Soon": {
+    "category": "handwriting"
+  },
+  "Concert One": {
+    "category": "display"
+  },
+  "Condiment": {
+    "category": "handwriting"
+  },
+  "Content": {
+    "category": "display"
+  },
+  "Contrail One": {
+    "category": "display"
+  },
+  "Convergence": {
+    "category": "sans-serif"
+  },
+  "Cookie": {
+    "category": "handwriting"
+  },
+  "Copse": {
+    "category": "serif"
+  },
+  "Corben": {
+    "category": "display"
+  },
+  "Cormorant": {
+    "category": "serif"
+  },
+  "Cormorant Garamond": {
+    "category": "serif"
+  },
+  "Cormorant Infant": {
+    "category": "serif"
+  },
+  "Cormorant SC": {
+    "category": "serif"
+  },
+  "Cormorant Unicase": {
+    "category": "serif"
+  },
+  "Cormorant Upright": {
+    "category": "serif"
+  },
+  "Courgette": {
+    "category": "handwriting"
+  },
+  "Courier Prime": {
+    "category": "monospace"
+  },
+  "Cousine": {
+    "category": "monospace"
+  },
+  "Coustard": {
+    "category": "serif"
+  },
+  "Covered By Your Grace": {
+    "category": "handwriting"
+  },
+  "Crafty Girls": {
+    "category": "handwriting"
+  },
+  "Creepster": {
+    "category": "display"
+  },
+  "Crete Round": {
+    "category": "serif"
+  },
+  "Crimson Pro": {
+    "category": "serif"
+  },
+  "Crimson Text": {
+    "category": "serif"
+  },
+  "Croissant One": {
+    "category": "display"
+  },
+  "Crushed": {
+    "category": "display"
+  },
+  "Cuprum": {
+    "category": "sans-serif"
+  },
+  "Cute Font": {
+    "category": "display"
+  },
+  "Cutive": {
+    "category": "serif"
+  },
+  "Cutive Mono": {
+    "category": "monospace"
+  },
+  "DM Mono": {
+    "category": "monospace"
+  },
+  "DM Sans": {
+    "category": "sans-serif"
+  },
+  "DM Serif Display": {
+    "category": "serif"
+  },
+  "DM Serif Text": {
+    "category": "serif"
+  },
+  "Damion": {
+    "category": "handwriting"
+  },
+  "Dancing Script": {
+    "category": "handwriting"
+  },
+  "Dangrek": {
+    "category": "display"
+  },
+  "Darker Grotesque": {
+    "category": "sans-serif"
+  },
+  "David Libre": {
+    "category": "serif"
+  },
+  "Dawning of a New Day": {
+    "category": "handwriting"
+  },
+  "Days One": {
+    "category": "sans-serif"
+  },
+  "Dekko": {
+    "category": "handwriting"
+  },
+  "Delius": {
+    "category": "handwriting"
+  },
+  "Delius Swash Caps": {
+    "category": "handwriting"
+  },
+  "Delius Unicase": {
+    "category": "handwriting"
+  },
+  "Della Respira": {
+    "category": "serif"
+  },
+  "Denk One": {
+    "category": "sans-serif"
+  },
+  "Devonshire": {
+    "category": "handwriting"
+  },
+  "Dhurjati": {
+    "category": "sans-serif"
+  },
+  "Didact Gothic": {
+    "category": "sans-serif"
+  },
+  "Diplomata": {
+    "category": "display"
+  },
+  "Diplomata SC": {
+    "category": "display"
+  },
+  "Do Hyeon": {
+    "category": "sans-serif"
+  },
+  "Dokdo": {
+    "category": "handwriting"
+  },
+  "Domine": {
+    "category": "serif"
+  },
+  "Donegal One": {
+    "category": "serif"
+  },
+  "Doppio One": {
+    "category": "sans-serif"
+  },
+  "Dorsa": {
+    "category": "sans-serif"
+  },
+  "Dosis": {
+    "category": "sans-serif"
+  },
+  "Dr Sugiyama": {
+    "category": "handwriting"
+  },
+  "Duru Sans": {
+    "category": "sans-serif"
+  },
+  "Dynalight": {
+    "category": "display"
+  },
+  "EB Garamond": {
+    "category": "serif"
+  },
+  "Eagle Lake": {
+    "category": "handwriting"
+  },
+  "East Sea Dokdo": {
+    "category": "handwriting"
+  },
+  "Eater": {
+    "category": "display"
+  },
+  "Economica": {
+    "category": "sans-serif"
+  },
+  "Eczar": {
+    "category": "serif"
+  },
+  "El Messiri": {
+    "category": "sans-serif"
+  },
+  "Electrolize": {
+    "category": "sans-serif"
+  },
+  "Elsie": {
+    "category": "display"
+  },
+  "Elsie Swash Caps": {
+    "category": "display"
+  },
+  "Emblema One": {
+    "category": "display"
+  },
+  "Emilys Candy": {
+    "category": "display"
+  },
+  "Encode Sans": {
+    "category": "sans-serif"
+  },
+  "Encode Sans Condensed": {
+    "category": "sans-serif"
+  },
+  "Encode Sans Expanded": {
+    "category": "sans-serif"
+  },
+  "Encode Sans Semi Condensed": {
+    "category": "sans-serif"
+  },
+  "Encode Sans Semi Expanded": {
+    "category": "sans-serif"
+  },
+  "Engagement": {
+    "category": "handwriting"
+  },
+  "Englebert": {
+    "category": "sans-serif"
+  },
+  "Enriqueta": {
+    "category": "serif"
+  },
+  "Epilogue": {
+    "category": "sans-serif"
+  },
+  "Erica One": {
+    "category": "display"
+  },
+  "Esteban": {
+    "category": "serif"
+  },
+  "Euphoria Script": {
+    "category": "handwriting"
+  },
+  "Ewert": {
+    "category": "display"
+  },
+  "Exo": {
+    "category": "sans-serif"
+  },
+  "Exo 2": {
+    "category": "sans-serif"
+  },
+  "Expletus Sans": {
+    "category": "display"
+  },
+  "Fahkwang": {
+    "category": "sans-serif"
+  },
+  "Fanwood Text": {
+    "category": "serif"
+  },
+  "Farro": {
+    "category": "sans-serif"
+  },
+  "Farsan": {
+    "category": "display"
+  },
+  "Fascinate": {
+    "category": "display"
+  },
+  "Fascinate Inline": {
+    "category": "display"
+  },
+  "Faster One": {
+    "category": "display"
+  },
+  "Fasthand": {
+    "category": "serif"
+  },
+  "Fauna One": {
+    "category": "serif"
+  },
+  "Faustina": {
+    "category": "serif"
+  },
+  "Federant": {
+    "category": "display"
+  },
+  "Federo": {
+    "category": "sans-serif"
+  },
+  "Felipa": {
+    "category": "handwriting"
+  },
+  "Fenix": {
+    "category": "serif"
+  },
+  "Finger Paint": {
+    "category": "display"
+  },
+  "Fira Code": {
+    "category": "monospace"
+  },
+  "Fira Mono": {
+    "category": "monospace"
+  },
+  "Fira Sans": {
+    "category": "sans-serif"
+  },
+  "Fira Sans Condensed": {
+    "category": "sans-serif"
+  },
+  "Fira Sans Extra Condensed": {
+    "category": "sans-serif"
+  },
+  "Fjalla One": {
+    "category": "sans-serif"
+  },
+  "Fjord One": {
+    "category": "serif"
+  },
+  "Flamenco": {
+    "category": "display"
+  },
+  "Flavors": {
+    "category": "display"
+  },
+  "Fondamento": {
+    "category": "handwriting"
+  },
+  "Fontdiner Swanky": {
+    "category": "display"
+  },
+  "Forum": {
+    "category": "display"
+  },
+  "Francois One": {
+    "category": "sans-serif"
+  },
+  "Frank Ruhl Libre": {
+    "category": "serif"
+  },
+  "Freckle Face": {
+    "category": "display"
+  },
+  "Fredericka the Great": {
+    "category": "display"
+  },
+  "Fredoka One": {
+    "category": "display"
+  },
+  "Freehand": {
+    "category": "display"
+  },
+  "Fresca": {
+    "category": "sans-serif"
+  },
+  "Frijole": {
+    "category": "display"
+  },
+  "Fruktur": {
+    "category": "display"
+  },
+  "Fugaz One": {
+    "category": "display"
+  },
+  "GFS Didot": {
+    "category": "serif"
+  },
+  "GFS Neohellenic": {
+    "category": "sans-serif"
+  },
+  "Gabriela": {
+    "category": "serif"
+  },
+  "Gaegu": {
+    "category": "handwriting"
+  },
+  "Gafata": {
+    "category": "sans-serif"
+  },
+  "Galada": {
+    "category": "display"
+  },
+  "Galdeano": {
+    "category": "sans-serif"
+  },
+  "Galindo": {
+    "category": "display"
+  },
+  "Gamja Flower": {
+    "category": "handwriting"
+  },
+  "Gayathri": {
+    "category": "sans-serif"
+  },
+  "Gelasio": {
+    "category": "serif"
+  },
+  "Gentium Basic": {
+    "category": "serif"
+  },
+  "Gentium Book Basic": {
+    "category": "serif"
+  },
+  "Geo": {
+    "category": "sans-serif"
+  },
+  "Geostar": {
+    "category": "display"
+  },
+  "Geostar Fill": {
+    "category": "display"
+  },
+  "Germania One": {
+    "category": "display"
+  },
+  "Gidugu": {
+    "category": "sans-serif"
+  },
+  "Gilda Display": {
+    "category": "serif"
+  },
+  "Girassol": {
+    "category": "display"
+  },
+  "Give You Glory": {
+    "category": "handwriting"
+  },
+  "Glass Antiqua": {
+    "category": "display"
+  },
+  "Glegoo": {
+    "category": "serif"
+  },
+  "Gloria Hallelujah": {
+    "category": "handwriting"
+  },
+  "Goblin One": {
+    "category": "display"
+  },
+  "Gochi Hand": {
+    "category": "handwriting"
+  },
+  "Gorditas": {
+    "category": "display"
+  },
+  "Gothic A1": {
+    "category": "sans-serif"
+  },
+  "Gotu": {
+    "category": "sans-serif"
+  },
+  "Goudy Bookletter 1911": {
+    "category": "serif"
+  },
+  "Graduate": {
+    "category": "display"
+  },
+  "Grand Hotel": {
+    "category": "handwriting"
+  },
+  "Grandstander": {
+    "category": "display"
+  },
+  "Gravitas One": {
+    "category": "display"
+  },
+  "Great Vibes": {
+    "category": "handwriting"
+  },
+  "Grenze": {
+    "category": "serif"
+  },
+  "Grenze Gotisch": {
+    "category": "display"
+  },
+  "Griffy": {
+    "category": "display"
+  },
+  "Gruppo": {
+    "category": "display"
+  },
+  "Gudea": {
+    "category": "sans-serif"
+  },
+  "Gugi": {
+    "category": "display"
+  },
+  "Gupter": {
+    "category": "serif"
+  },
+  "Gurajada": {
+    "category": "serif"
+  },
+  "Habibi": {
+    "category": "serif"
+  },
+  "Halant": {
+    "category": "serif"
+  },
+  "Hammersmith One": {
+    "category": "sans-serif"
+  },
+  "Hanalei": {
+    "category": "display"
+  },
+  "Hanalei Fill": {
+    "category": "display"
+  },
+  "Handlee": {
+    "category": "handwriting"
+  },
+  "Hanuman": {
+    "category": "serif"
+  },
+  "Happy Monkey": {
+    "category": "display"
+  },
+  "Harmattan": {
+    "category": "sans-serif"
+  },
+  "Headland One": {
+    "category": "serif"
+  },
+  "Heebo": {
+    "category": "sans-serif"
+  },
+  "Henny Penny": {
+    "category": "display"
+  },
+  "Hepta Slab": {
+    "category": "serif"
+  },
+  "Herr Von Muellerhoff": {
+    "category": "handwriting"
+  },
+  "Hi Melody": {
+    "category": "handwriting"
+  },
+  "Hind": {
+    "category": "sans-serif"
+  },
+  "Hind Guntur": {
+    "category": "sans-serif"
+  },
+  "Hind Madurai": {
+    "category": "sans-serif"
+  },
+  "Hind Siliguri": {
+    "category": "sans-serif"
+  },
+  "Hind Vadodara": {
+    "category": "sans-serif"
+  },
+  "Holtwood One SC": {
+    "category": "serif"
+  },
+  "Homemade Apple": {
+    "category": "handwriting"
+  },
+  "Homenaje": {
+    "category": "sans-serif"
+  },
+  "IBM Plex Mono": {
+    "category": "monospace"
+  },
+  "IBM Plex Sans": {
+    "category": "sans-serif"
+  },
+  "IBM Plex Sans Condensed": {
+    "category": "sans-serif"
+  },
+  "IBM Plex Serif": {
+    "category": "serif"
+  },
+  "IM Fell DW Pica": {
+    "category": "serif"
+  },
+  "IM Fell DW Pica SC": {
+    "category": "serif"
+  },
+  "IM Fell Double Pica": {
+    "category": "serif"
+  },
+  "IM Fell Double Pica SC": {
+    "category": "serif"
+  },
+  "IM Fell English": {
+    "category": "serif"
+  },
+  "IM Fell English SC": {
+    "category": "serif"
+  },
+  "IM Fell French Canon": {
+    "category": "serif"
+  },
+  "IM Fell French Canon SC": {
+    "category": "serif"
+  },
+  "IM Fell Great Primer": {
+    "category": "serif"
+  },
+  "IM Fell Great Primer SC": {
+    "category": "serif"
+  },
+  "Ibarra Real Nova": {
+    "category": "serif"
+  },
+  "Iceberg": {
+    "category": "display"
+  },
+  "Iceland": {
+    "category": "display"
+  },
+  "Imprima": {
+    "category": "sans-serif"
+  },
+  "Inconsolata": {
+    "category": "monospace"
+  },
+  "Inder": {
+    "category": "sans-serif"
+  },
+  "Indie Flower": {
+    "category": "handwriting"
+  },
+  "Inika": {
+    "category": "serif"
+  },
+  "Inknut Antiqua": {
+    "category": "serif"
+  },
+  "Inria Sans": {
+    "category": "sans-serif"
+  },
+  "Inria Serif": {
+    "category": "serif"
+  },
+  "Inter": {
+    "category": "sans-serif"
+  },
+  "Irish Grover": {
+    "category": "display"
+  },
+  "Istok Web": {
+    "category": "sans-serif"
+  },
+  "Italiana": {
+    "category": "serif"
+  },
+  "Italianno": {
+    "category": "handwriting"
+  },
+  "Itim": {
+    "category": "handwriting"
+  },
+  "Jacques Francois": {
+    "category": "serif"
+  },
+  "Jacques Francois Shadow": {
+    "category": "display"
+  },
+  "Jaldi": {
+    "category": "sans-serif"
+  },
+  "Jim Nightshade": {
+    "category": "handwriting"
+  },
+  "Jockey One": {
+    "category": "sans-serif"
+  },
+  "Jolly Lodger": {
+    "category": "display"
+  },
+  "Jomhuria": {
+    "category": "display"
+  },
+  "Jomolhari": {
+    "category": "serif"
+  },
+  "Josefin Sans": {
+    "category": "sans-serif"
+  },
+  "Josefin Slab": {
+    "category": "serif"
+  },
+  "Jost": {
+    "category": "sans-serif"
+  },
+  "Joti One": {
+    "category": "display"
+  },
+  "Jua": {
+    "category": "sans-serif"
+  },
+  "Judson": {
+    "category": "serif"
+  },
+  "Julee": {
+    "category": "handwriting"
+  },
+  "Julius Sans One": {
+    "category": "sans-serif"
+  },
+  "Junge": {
+    "category": "serif"
+  },
+  "Jura": {
+    "category": "sans-serif"
+  },
+  "Just Another Hand": {
+    "category": "handwriting"
+  },
+  "Just Me Again Down Here": {
+    "category": "handwriting"
+  },
+  "K2D": {
+    "category": "sans-serif"
+  },
+  "Kadwa": {
+    "category": "serif"
+  },
+  "Kalam": {
+    "category": "handwriting"
+  },
+  "Kameron": {
+    "category": "serif"
+  },
+  "Kanit": {
+    "category": "sans-serif"
+  },
+  "Kantumruy": {
+    "category": "sans-serif"
+  },
+  "Karla": {
+    "category": "sans-serif"
+  },
+  "Karma": {
+    "category": "serif"
+  },
+  "Katibeh": {
+    "category": "display"
+  },
+  "Kaushan Script": {
+    "category": "handwriting"
+  },
+  "Kavivanar": {
+    "category": "handwriting"
+  },
+  "Kavoon": {
+    "category": "display"
+  },
+  "Kdam Thmor": {
+    "category": "display"
+  },
+  "Keania One": {
+    "category": "display"
+  },
+  "Kelly Slab": {
+    "category": "display"
+  },
+  "Kenia": {
+    "category": "display"
+  },
+  "Khand": {
+    "category": "sans-serif"
+  },
+  "Khmer": {
+    "category": "display"
+  },
+  "Khula": {
+    "category": "sans-serif"
+  },
+  "Kirang Haerang": {
+    "category": "display"
+  },
+  "Kite One": {
+    "category": "sans-serif"
+  },
+  "Knewave": {
+    "category": "display"
+  },
+  "KoHo": {
+    "category": "sans-serif"
+  },
+  "Kodchasan": {
+    "category": "sans-serif"
+  },
+  "Kosugi": {
+    "category": "sans-serif"
+  },
+  "Kosugi Maru": {
+    "category": "sans-serif"
+  },
+  "Kotta One": {
+    "category": "serif"
+  },
+  "Koulen": {
+    "category": "display"
+  },
+  "Kranky": {
+    "category": "display"
+  },
+  "Kreon": {
+    "category": "serif"
+  },
+  "Kristi": {
+    "category": "handwriting"
+  },
+  "Krona One": {
+    "category": "sans-serif"
+  },
+  "Krub": {
+    "category": "sans-serif"
+  },
+  "Kufam": {
+    "category": "display"
+  },
+  "Kulim Park": {
+    "category": "sans-serif"
+  },
+  "Kumar One": {
+    "category": "display"
+  },
+  "Kumar One Outline": {
+    "category": "display"
+  },
+  "Kumbh Sans": {
+    "category": "sans-serif"
+  },
+  "Kurale": {
+    "category": "serif"
+  },
+  "La Belle Aurore": {
+    "category": "handwriting"
+  },
+  "Lacquer": {
+    "category": "display"
+  },
+  "Laila": {
+    "category": "serif"
+  },
+  "Lakki Reddy": {
+    "category": "handwriting"
+  },
+  "Lalezar": {
+    "category": "display"
+  },
+  "Lancelot": {
+    "category": "display"
+  },
+  "Lateef": {
+    "category": "handwriting"
+  },
+  "Lato": {
+    "category": "sans-serif"
+  },
+  "League Script": {
+    "category": "handwriting"
+  },
+  "Leckerli One": {
+    "category": "handwriting"
+  },
+  "Ledger": {
+    "category": "serif"
+  },
+  "Lekton": {
+    "category": "sans-serif"
+  },
+  "Lemon": {
+    "category": "display"
+  },
+  "Lemonada": {
+    "category": "display"
+  },
+  "Lexend Deca": {
+    "category": "sans-serif"
+  },
+  "Lexend Exa": {
+    "category": "sans-serif"
+  },
+  "Lexend Giga": {
+    "category": "sans-serif"
+  },
+  "Lexend Mega": {
+    "category": "sans-serif"
+  },
+  "Lexend Peta": {
+    "category": "sans-serif"
+  },
+  "Lexend Tera": {
+    "category": "sans-serif"
+  },
+  "Lexend Zetta": {
+    "category": "sans-serif"
+  },
+  "Libre Barcode 128": {
+    "category": "display"
+  },
+  "Libre Barcode 128 Text": {
+    "category": "display"
+  },
+  "Libre Barcode 39": {
+    "category": "display"
+  },
+  "Libre Barcode 39 Extended": {
+    "category": "display"
+  },
+  "Libre Barcode 39 Extended Text": {
+    "category": "display"
+  },
+  "Libre Barcode 39 Text": {
+    "category": "display"
+  },
+  "Libre Baskerville": {
+    "category": "serif"
+  },
+  "Libre Caslon Display": {
+    "category": "serif"
+  },
+  "Libre Caslon Text": {
+    "category": "serif"
+  },
+  "Libre Franklin": {
+    "category": "sans-serif"
+  },
+  "Life Savers": {
+    "category": "display"
+  },
+  "Lilita One": {
+    "category": "display"
+  },
+  "Lily Script One": {
+    "category": "display"
+  },
+  "Limelight": {
+    "category": "display"
+  },
+  "Linden Hill": {
+    "category": "serif"
+  },
+  "Literata": {
+    "category": "serif"
+  },
+  "Liu Jian Mao Cao": {
+    "category": "handwriting"
+  },
+  "Livvic": {
+    "category": "sans-serif"
+  },
+  "Lobster": {
+    "category": "display"
+  },
+  "Lobster Two": {
+    "category": "display"
+  },
+  "Londrina Outline": {
+    "category": "display"
+  },
+  "Londrina Shadow": {
+    "category": "display"
+  },
+  "Londrina Sketch": {
+    "category": "display"
+  },
+  "Londrina Solid": {
+    "category": "display"
+  },
+  "Long Cang": {
+    "category": "handwriting"
+  },
+  "Lora": {
+    "category": "serif"
+  },
+  "Love Ya Like A Sister": {
+    "category": "display"
+  },
+  "Loved by the King": {
+    "category": "handwriting"
+  },
+  "Lovers Quarrel": {
+    "category": "handwriting"
+  },
+  "Luckiest Guy": {
+    "category": "display"
+  },
+  "Lusitana": {
+    "category": "serif"
+  },
+  "Lustria": {
+    "category": "serif"
+  },
+  "M PLUS 1p": {
+    "category": "sans-serif"
+  },
+  "M PLUS Rounded 1c": {
+    "category": "sans-serif"
+  },
+  "Ma Shan Zheng": {
+    "category": "handwriting"
+  },
+  "Macondo": {
+    "category": "display"
+  },
+  "Macondo Swash Caps": {
+    "category": "display"
+  },
+  "Mada": {
+    "category": "sans-serif"
+  },
+  "Magra": {
+    "category": "sans-serif"
+  },
+  "Maiden Orange": {
+    "category": "display"
+  },
+  "Maitree": {
+    "category": "serif"
+  },
+  "Major Mono Display": {
+    "category": "monospace"
+  },
+  "Mako": {
+    "category": "sans-serif"
+  },
+  "Mali": {
+    "category": "handwriting"
+  },
+  "Mallanna": {
+    "category": "sans-serif"
+  },
+  "Mandali": {
+    "category": "sans-serif"
+  },
+  "Manjari": {
+    "category": "sans-serif"
+  },
+  "Manrope": {
+    "category": "sans-serif"
+  },
+  "Mansalva": {
+    "category": "handwriting"
+  },
+  "Manuale": {
+    "category": "serif"
+  },
+  "Marcellus": {
+    "category": "serif"
+  },
+  "Marcellus SC": {
+    "category": "serif"
+  },
+  "Marck Script": {
+    "category": "handwriting"
+  },
+  "Margarine": {
+    "category": "display"
+  },
+  "Markazi Text": {
+    "category": "serif"
+  },
+  "Marko One": {
+    "category": "serif"
+  },
+  "Marmelad": {
+    "category": "sans-serif"
+  },
+  "Martel": {
+    "category": "serif"
+  },
+  "Martel Sans": {
+    "category": "sans-serif"
+  },
+  "Marvel": {
+    "category": "sans-serif"
+  },
+  "Mate": {
+    "category": "serif"
+  },
+  "Mate SC": {
+    "category": "serif"
+  },
+  "Material Icons": {
+    "category": "icon"
+  },
+  "Maven Pro": {
+    "category": "sans-serif"
+  },
+  "McLaren": {
+    "category": "display"
+  },
+  "Meddon": {
+    "category": "handwriting"
+  },
+  "MedievalSharp": {
+    "category": "display"
+  },
+  "Medula One": {
+    "category": "display"
+  },
+  "Meera Inimai": {
+    "category": "sans-serif"
+  },
+  "Megrim": {
+    "category": "display"
+  },
+  "Meie Script": {
+    "category": "handwriting"
+  },
+  "Merienda": {
+    "category": "handwriting"
+  },
+  "Merienda One": {
+    "category": "handwriting"
+  },
+  "Merriweather": {
+    "category": "serif"
+  },
+  "Merriweather Sans": {
+    "category": "sans-serif"
+  },
+  "Metal": {
+    "category": "display"
+  },
+  "Metal Mania": {
+    "category": "display"
+  },
+  "Metamorphous": {
+    "category": "display"
+  },
+  "Metrophobic": {
+    "category": "sans-serif"
+  },
+  "Michroma": {
+    "category": "sans-serif"
+  },
+  "Milonga": {
+    "category": "display"
+  },
+  "Miltonian": {
+    "category": "display"
+  },
+  "Miltonian Tattoo": {
+    "category": "display"
+  },
+  "Mina": {
+    "category": "sans-serif"
+  },
+  "Miniver": {
+    "category": "display"
+  },
+  "Miriam Libre": {
+    "category": "sans-serif"
+  },
+  "Mirza": {
+    "category": "display"
+  },
+  "Miss Fajardose": {
+    "category": "handwriting"
+  },
+  "Mitr": {
+    "category": "sans-serif"
+  },
+  "Modak": {
+    "category": "display"
+  },
+  "Modern Antiqua": {
+    "category": "display"
+  },
+  "Mogra": {
+    "category": "display"
+  },
+  "Molengo": {
+    "category": "sans-serif"
+  },
+  "Molle": {
+    "category": "handwriting"
+  },
+  "Monda": {
+    "category": "sans-serif"
+  },
+  "Monofett": {
+    "category": "display"
+  },
+  "Monoton": {
+    "category": "display"
+  },
+  "Monsieur La Doulaise": {
+    "category": "handwriting"
+  },
+  "Montaga": {
+    "category": "serif"
+  },
+  "Montez": {
+    "category": "handwriting"
+  },
+  "Montserrat": {
+    "category": "sans-serif"
+  },
+  "Montserrat Alternates": {
+    "category": "sans-serif"
+  },
+  "Montserrat Subrayada": {
+    "category": "sans-serif"
+  },
+  "Moul": {
+    "category": "display"
+  },
+  "Moulpali": {
+    "category": "display"
+  },
+  "Mountains of Christmas": {
+    "category": "display"
+  },
+  "Mouse Memoirs": {
+    "category": "sans-serif"
+  },
+  "Mr Bedfort": {
+    "category": "handwriting"
+  },
+  "Mr Dafoe": {
+    "category": "handwriting"
+  },
+  "Mr De Haviland": {
+    "category": "handwriting"
+  },
+  "Mrs Saint Delafield": {
+    "category": "handwriting"
+  },
+  "Mrs Sheppards": {
+    "category": "handwriting"
+  },
+  "Mukta": {
+    "category": "sans-serif"
+  },
+  "Mukta Mahee": {
+    "category": "sans-serif"
+  },
+  "Mukta Malar": {
+    "category": "sans-serif"
+  },
+  "Mukta Vaani": {
+    "category": "sans-serif"
+  },
+  "Mulish": {
+    "category": "sans-serif"
+  },
+  "MuseoModerno": {
+    "category": "display"
+  },
+  "Mystery Quest": {
+    "category": "display"
+  },
+  "NTR": {
+    "category": "sans-serif"
+  },
+  "Nanum Brush Script": {
+    "category": "handwriting"
+  },
+  "Nanum Gothic": {
+    "category": "sans-serif"
+  },
+  "Nanum Gothic Coding": {
+    "category": "monospace"
+  },
+  "Nanum Myeongjo": {
+    "category": "serif"
+  },
+  "Nanum Pen Script": {
+    "category": "handwriting"
+  },
+  "Neucha": {
+    "category": "handwriting"
+  },
+  "Neuton": {
+    "category": "serif"
+  },
+  "New Rocker": {
+    "category": "display"
+  },
+  "News Cycle": {
+    "category": "sans-serif"
+  },
+  "Niconne": {
+    "category": "handwriting"
+  },
+  "Niramit": {
+    "category": "sans-serif"
+  },
+  "Nixie One": {
+    "category": "display"
+  },
+  "Nobile": {
+    "category": "sans-serif"
+  },
+  "Nokora": {
+    "category": "serif"
+  },
+  "Norican": {
+    "category": "handwriting"
+  },
+  "Nosifer": {
+    "category": "display"
+  },
+  "Notable": {
+    "category": "sans-serif"
+  },
+  "Nothing You Could Do": {
+    "category": "handwriting"
+  },
+  "Noticia Text": {
+    "category": "serif"
+  },
+  "Noto Sans": {
+    "category": "sans-serif"
+  },
+  "Noto Sans HK": {
+    "category": "sans-serif"
+  },
+  "Noto Sans JP": {
+    "category": "sans-serif"
+  },
+  "Noto Sans KR": {
+    "category": "sans-serif"
+  },
+  "Noto Sans SC": {
+    "category": "sans-serif"
+  },
+  "Noto Sans TC": {
+    "category": "sans-serif"
+  },
+  "Noto Serif": {
+    "category": "serif"
+  },
+  "Noto Serif JP": {
+    "category": "serif"
+  },
+  "Noto Serif KR": {
+    "category": "serif"
+  },
+  "Noto Serif SC": {
+    "category": "serif"
+  },
+  "Noto Serif TC": {
+    "category": "serif"
+  },
+  "Nova Cut": {
+    "category": "display"
+  },
+  "Nova Flat": {
+    "category": "display"
+  },
+  "Nova Mono": {
+    "category": "monospace"
+  },
+  "Nova Oval": {
+    "category": "display"
+  },
+  "Nova Round": {
+    "category": "display"
+  },
+  "Nova Script": {
+    "category": "display"
+  },
+  "Nova Slim": {
+    "category": "display"
+  },
+  "Nova Square": {
+    "category": "display"
+  },
+  "Numans": {
+    "category": "sans-serif"
+  },
+  "Nunito": {
+    "category": "sans-serif"
+  },
+  "Nunito Sans": {
+    "category": "sans-serif"
+  },
+  "Odibee Sans": {
+    "category": "display"
+  },
+  "Odor Mean Chey": {
+    "category": "display"
+  },
+  "Offside": {
+    "category": "display"
+  },
+  "Old Standard TT": {
+    "category": "serif"
+  },
+  "Oldenburg": {
+    "category": "display"
+  },
+  "Oleo Script": {
+    "category": "display"
+  },
+  "Oleo Script Swash Caps": {
+    "category": "display"
+  },
+  "Open Sans": {
+    "category": "sans-serif"
+  },
+  "Open Sans Condensed": {
+    "category": "sans-serif"
+  },
+  "Oranienbaum": {
+    "category": "serif"
+  },
+  "Orbitron": {
+    "category": "sans-serif"
+  },
+  "Oregano": {
+    "category": "display"
+  },
+  "Orienta": {
+    "category": "sans-serif"
+  },
+  "Original Surfer": {
+    "category": "display"
+  },
+  "Oswald": {
+    "category": "sans-serif"
+  },
+  "Over the Rainbow": {
+    "category": "handwriting"
+  },
+  "Overlock": {
+    "category": "display"
+  },
+  "Overlock SC": {
+    "category": "display"
+  },
+  "Overpass": {
+    "category": "sans-serif"
+  },
+  "Overpass Mono": {
+    "category": "monospace"
+  },
+  "Ovo": {
+    "category": "serif"
+  },
+  "Oxanium": {
+    "category": "display"
+  },
+  "Oxygen": {
+    "category": "sans-serif"
+  },
+  "Oxygen Mono": {
+    "category": "monospace"
+  },
+  "PT Mono": {
+    "category": "monospace"
+  },
+  "PT Sans": {
+    "category": "sans-serif"
+  },
+  "PT Sans Caption": {
+    "category": "sans-serif"
+  },
+  "PT Sans Narrow": {
+    "category": "sans-serif"
+  },
+  "PT Serif": {
+    "category": "serif"
+  },
+  "PT Serif Caption": {
+    "category": "serif"
+  },
+  "Pacifico": {
+    "category": "handwriting"
+  },
+  "Padauk": {
+    "category": "sans-serif"
+  },
+  "Palanquin": {
+    "category": "sans-serif"
+  },
+  "Palanquin Dark": {
+    "category": "sans-serif"
+  },
+  "Pangolin": {
+    "category": "handwriting"
+  },
+  "Paprika": {
+    "category": "display"
+  },
+  "Parisienne": {
+    "category": "handwriting"
+  },
+  "Passero One": {
+    "category": "display"
+  },
+  "Passion One": {
+    "category": "display"
+  },
+  "Pathway Gothic One": {
+    "category": "sans-serif"
+  },
+  "Patrick Hand": {
+    "category": "handwriting"
+  },
+  "Patrick Hand SC": {
+    "category": "handwriting"
+  },
+  "Pattaya": {
+    "category": "sans-serif"
+  },
+  "Patua One": {
+    "category": "display"
+  },
+  "Pavanam": {
+    "category": "sans-serif"
+  },
+  "Paytone One": {
+    "category": "sans-serif"
+  },
+  "Peddana": {
+    "category": "serif"
+  },
+  "Peralta": {
+    "category": "display"
+  },
+  "Permanent Marker": {
+    "category": "handwriting"
+  },
+  "Petit Formal Script": {
+    "category": "handwriting"
+  },
+  "Petrona": {
+    "category": "serif"
+  },
+  "Philosopher": {
+    "category": "sans-serif"
+  },
+  "Piazzolla": {
+    "category": "serif"
+  },
+  "Piedra": {
+    "category": "display"
+  },
+  "Pinyon Script": {
+    "category": "handwriting"
+  },
+  "Pirata One": {
+    "category": "display"
+  },
+  "Plaster": {
+    "category": "display"
+  },
+  "Play": {
+    "category": "sans-serif"
+  },
+  "Playball": {
+    "category": "display"
+  },
+  "Playfair Display": {
+    "category": "serif"
+  },
+  "Playfair Display SC": {
+    "category": "serif"
+  },
+  "Podkova": {
+    "category": "serif"
+  },
+  "Poiret One": {
+    "category": "display"
+  },
+  "Poller One": {
+    "category": "display"
+  },
+  "Poly": {
+    "category": "serif"
+  },
+  "Pompiere": {
+    "category": "display"
+  },
+  "Pontano Sans": {
+    "category": "sans-serif"
+  },
+  "Poor Story": {
+    "category": "display"
+  },
+  "Poppins": {
+    "category": "sans-serif"
+  },
+  "Port Lligat Sans": {
+    "category": "sans-serif"
+  },
+  "Port Lligat Slab": {
+    "category": "serif"
+  },
+  "Pragati Narrow": {
+    "category": "sans-serif"
+  },
+  "Prata": {
+    "category": "serif"
+  },
+  "Preahvihear": {
+    "category": "display"
+  },
+  "Press Start 2P": {
+    "category": "display"
+  },
+  "Pridi": {
+    "category": "serif"
+  },
+  "Princess Sofia": {
+    "category": "handwriting"
+  },
+  "Prociono": {
+    "category": "serif"
+  },
+  "Prompt": {
+    "category": "sans-serif"
+  },
+  "Prosto One": {
+    "category": "display"
+  },
+  "Proza Libre": {
+    "category": "sans-serif"
+  },
+  "Public Sans": {
+    "category": "sans-serif"
+  },
+  "Puritan": {
+    "category": "sans-serif"
+  },
+  "Purple Purse": {
+    "category": "display"
+  },
+  "Quando": {
+    "category": "serif"
+  },
+  "Quantico": {
+    "category": "sans-serif"
+  },
+  "Quattrocento": {
+    "category": "serif"
+  },
+  "Quattrocento Sans": {
+    "category": "sans-serif"
+  },
+  "Questrial": {
+    "category": "sans-serif"
+  },
+  "Quicksand": {
+    "category": "sans-serif"
+  },
+  "Quintessential": {
+    "category": "handwriting"
+  },
+  "Qwigley": {
+    "category": "handwriting"
+  },
+  "Racing Sans One": {
+    "category": "display"
+  },
+  "Radley": {
+    "category": "serif"
+  },
+  "Rajdhani": {
+    "category": "sans-serif"
+  },
+  "Rakkas": {
+    "category": "display"
+  },
+  "Raleway": {
+    "category": "sans-serif"
+  },
+  "Raleway Dots": {
+    "category": "display"
+  },
+  "Ramabhadra": {
+    "category": "sans-serif"
+  },
+  "Ramaraja": {
+    "category": "serif"
+  },
+  "Rambla": {
+    "category": "sans-serif"
+  },
+  "Rammetto One": {
+    "category": "display"
+  },
+  "Ranchers": {
+    "category": "display"
+  },
+  "Rancho": {
+    "category": "handwriting"
+  },
+  "Ranga": {
+    "category": "display"
+  },
+  "Rasa": {
+    "category": "serif"
+  },
+  "Rationale": {
+    "category": "sans-serif"
+  },
+  "Ravi Prakash": {
+    "category": "display"
+  },
+  "Recursive": {
+    "category": "sans-serif"
+  },
+  "Red Hat Display": {
+    "category": "sans-serif"
+  },
+  "Red Hat Text": {
+    "category": "sans-serif"
+  },
+  "Red Rose": {
+    "category": "display"
+  },
+  "Redressed": {
+    "category": "handwriting"
+  },
+  "Reem Kufi": {
+    "category": "sans-serif"
+  },
+  "Reenie Beanie": {
+    "category": "handwriting"
+  },
+  "Revalia": {
+    "category": "display"
+  },
+  "Rhodium Libre": {
+    "category": "serif"
+  },
+  "Ribeye": {
+    "category": "display"
+  },
+  "Ribeye Marrow": {
+    "category": "display"
+  },
+  "Righteous": {
+    "category": "display"
+  },
+  "Risque": {
+    "category": "display"
+  },
+  "Roboto": {
+    "category": "sans-serif"
+  },
+  "Roboto Condensed": {
+    "category": "sans-serif"
+  },
+  "Roboto Mono": {
+    "category": "monospace"
+  },
+  "Roboto Slab": {
+    "category": "serif"
+  },
+  "Rochester": {
+    "category": "handwriting"
+  },
+  "Rock Salt": {
+    "category": "handwriting"
+  },
+  "Rokkitt": {
+    "category": "serif"
+  },
+  "Romanesco": {
+    "category": "handwriting"
+  },
+  "Ropa Sans": {
+    "category": "sans-serif"
+  },
+  "Rosario": {
+    "category": "sans-serif"
+  },
+  "Rosarivo": {
+    "category": "serif"
+  },
+  "Rouge Script": {
+    "category": "handwriting"
+  },
+  "Rowdies": {
+    "category": "display"
+  },
+  "Rozha One": {
+    "category": "serif"
+  },
+  "Rubik": {
+    "category": "sans-serif"
+  },
+  "Rubik Mono One": {
+    "category": "sans-serif"
+  },
+  "Ruda": {
+    "category": "sans-serif"
+  },
+  "Rufina": {
+    "category": "serif"
+  },
+  "Ruge Boogie": {
+    "category": "handwriting"
+  },
+  "Ruluko": {
+    "category": "sans-serif"
+  },
+  "Rum Raisin": {
+    "category": "sans-serif"
+  },
+  "Ruslan Display": {
+    "category": "display"
+  },
+  "Russo One": {
+    "category": "sans-serif"
+  },
+  "Ruthie": {
+    "category": "handwriting"
+  },
+  "Rye": {
+    "category": "display"
+  },
+  "Sacramento": {
+    "category": "handwriting"
+  },
+  "Sahitya": {
+    "category": "serif"
+  },
+  "Sail": {
+    "category": "display"
+  },
+  "Saira": {
+    "category": "sans-serif"
+  },
+  "Saira Condensed": {
+    "category": "sans-serif"
+  },
+  "Saira Extra Condensed": {
+    "category": "sans-serif"
+  },
+  "Saira Semi Condensed": {
+    "category": "sans-serif"
+  },
+  "Saira Stencil One": {
+    "category": "display"
+  },
+  "Salsa": {
+    "category": "display"
+  },
+  "Sanchez": {
+    "category": "serif"
+  },
+  "Sancreek": {
+    "category": "display"
+  },
+  "Sansita": {
+    "category": "sans-serif"
+  },
+  "Sansita Swashed": {
+    "category": "display"
+  },
+  "Sarabun": {
+    "category": "sans-serif"
+  },
+  "Sarala": {
+    "category": "sans-serif"
+  },
+  "Sarina": {
+    "category": "display"
+  },
+  "Sarpanch": {
+    "category": "sans-serif"
+  },
+  "Satisfy": {
+    "category": "handwriting"
+  },
+  "Sawarabi Gothic": {
+    "category": "sans-serif"
+  },
+  "Sawarabi Mincho": {
+    "category": "sans-serif"
+  },
+  "Scada": {
+    "category": "sans-serif"
+  },
+  "Scheherazade": {
+    "category": "serif"
+  },
+  "Schoolbell": {
+    "category": "handwriting"
+  },
+  "Scope One": {
+    "category": "serif"
+  },
+  "Seaweed Script": {
+    "category": "display"
+  },
+  "Secular One": {
+    "category": "sans-serif"
+  },
+  "Sedgwick Ave": {
+    "category": "handwriting"
+  },
+  "Sedgwick Ave Display": {
+    "category": "handwriting"
+  },
+  "Sen": {
+    "category": "sans-serif"
+  },
+  "Sevillana": {
+    "category": "display"
+  },
+  "Seymour One": {
+    "category": "sans-serif"
+  },
+  "Shadows Into Light": {
+    "category": "handwriting"
+  },
+  "Shadows Into Light Two": {
+    "category": "handwriting"
+  },
+  "Shanti": {
+    "category": "sans-serif"
+  },
+  "Share": {
+    "category": "display"
+  },
+  "Share Tech": {
+    "category": "sans-serif"
+  },
+  "Share Tech Mono": {
+    "category": "monospace"
+  },
+  "Shojumaru": {
+    "category": "display"
+  },
+  "Short Stack": {
+    "category": "handwriting"
+  },
+  "Shrikhand": {
+    "category": "display"
+  },
+  "Siemreap": {
+    "category": "display"
+  },
+  "Sigmar One": {
+    "category": "display"
+  },
+  "Signika": {
+    "category": "sans-serif"
+  },
+  "Signika Negative": {
+    "category": "sans-serif"
+  },
+  "Simonetta": {
+    "category": "display"
+  },
+  "Single Day": {
+    "category": "display"
+  },
+  "Sintony": {
+    "category": "sans-serif"
+  },
+  "Sirin Stencil": {
+    "category": "display"
+  },
+  "Six Caps": {
+    "category": "sans-serif"
+  },
+  "Skranji": {
+    "category": "display"
+  },
+  "Slabo 13px": {
+    "category": "serif"
+  },
+  "Slabo 27px": {
+    "category": "serif"
+  },
+  "Slackey": {
+    "category": "display"
+  },
+  "Smokum": {
+    "category": "display"
+  },
+  "Smythe": {
+    "category": "display"
+  },
+  "Sniglet": {
+    "category": "display"
+  },
+  "Snippet": {
+    "category": "sans-serif"
+  },
+  "Snowburst One": {
+    "category": "display"
+  },
+  "Sofadi One": {
+    "category": "display"
+  },
+  "Sofia": {
+    "category": "handwriting"
+  },
+  "Solway": {
+    "category": "serif"
+  },
+  "Song Myung": {
+    "category": "serif"
+  },
+  "Sonsie One": {
+    "category": "display"
+  },
+  "Sora": {
+    "category": "sans-serif"
+  },
+  "Sorts Mill Goudy": {
+    "category": "serif"
+  },
+  "Source Code Pro": {
+    "category": "monospace"
+  },
+  "Source Sans Pro": {
+    "category": "sans-serif"
+  },
+  "Source Serif Pro": {
+    "category": "serif"
+  },
+  "Space Mono": {
+    "category": "monospace"
+  },
+  "Spartan": {
+    "category": "sans-serif"
+  },
+  "Special Elite": {
+    "category": "display"
+  },
+  "Spectral": {
+    "category": "serif"
+  },
+  "Spectral SC": {
+    "category": "serif"
+  },
+  "Spicy Rice": {
+    "category": "display"
+  },
+  "Spinnaker": {
+    "category": "sans-serif"
+  },
+  "Spirax": {
+    "category": "display"
+  },
+  "Squada One": {
+    "category": "display"
+  },
+  "Sree Krushnadevaraya": {
+    "category": "serif"
+  },
+  "Sriracha": {
+    "category": "handwriting"
+  },
+  "Srisakdi": {
+    "category": "display"
+  },
+  "Staatliches": {
+    "category": "display"
+  },
+  "Stalemate": {
+    "category": "handwriting"
+  },
+  "Stalinist One": {
+    "category": "display"
+  },
+  "Stardos Stencil": {
+    "category": "display"
+  },
+  "Stint Ultra Condensed": {
+    "category": "display"
+  },
+  "Stint Ultra Expanded": {
+    "category": "display"
+  },
+  "Stoke": {
+    "category": "serif"
+  },
+  "Strait": {
+    "category": "sans-serif"
+  },
+  "Stylish": {
+    "category": "sans-serif"
+  },
+  "Sue Ellen Francisco": {
+    "category": "handwriting"
+  },
+  "Suez One": {
+    "category": "serif"
+  },
+  "Sulphur Point": {
+    "category": "sans-serif"
+  },
+  "Sumana": {
+    "category": "serif"
+  },
+  "Sunflower": {
+    "category": "sans-serif"
+  },
+  "Sunshiney": {
+    "category": "handwriting"
+  },
+  "Supermercado One": {
+    "category": "display"
+  },
+  "Sura": {
+    "category": "serif"
+  },
+  "Suranna": {
+    "category": "serif"
+  },
+  "Suravaram": {
+    "category": "serif"
+  },
+  "Suwannaphum": {
+    "category": "display"
+  },
+  "Swanky and Moo Moo": {
+    "category": "handwriting"
+  },
+  "Syncopate": {
+    "category": "sans-serif"
+  },
+  "Syne": {
+    "category": "sans-serif"
+  },
+  "Tajawal": {
+    "category": "sans-serif"
+  },
+  "Tangerine": {
+    "category": "handwriting"
+  },
+  "Taprom": {
+    "category": "display"
+  },
+  "Tauri": {
+    "category": "sans-serif"
+  },
+  "Taviraj": {
+    "category": "serif"
+  },
+  "Teko": {
+    "category": "sans-serif"
+  },
+  "Telex": {
+    "category": "sans-serif"
+  },
+  "Tenali Ramakrishna": {
+    "category": "sans-serif"
+  },
+  "Tenor Sans": {
+    "category": "sans-serif"
+  },
+  "Text Me One": {
+    "category": "sans-serif"
+  },
+  "Thasadith": {
+    "category": "sans-serif"
+  },
+  "The Girl Next Door": {
+    "category": "handwriting"
+  },
+  "Tienne": {
+    "category": "serif"
+  },
+  "Tillana": {
+    "category": "handwriting"
+  },
+  "Timmana": {
+    "category": "sans-serif"
+  },
+  "Tinos": {
+    "category": "serif"
+  },
+  "Titan One": {
+    "category": "display"
+  },
+  "Titillium Web": {
+    "category": "sans-serif"
+  },
+  "Tomorrow": {
+    "category": "sans-serif"
+  },
+  "Trade Winds": {
+    "category": "display"
+  },
+  "Trirong": {
+    "category": "serif"
+  },
+  "Trocchi": {
+    "category": "serif"
+  },
+  "Trochut": {
+    "category": "display"
+  },
+  "Trykker": {
+    "category": "serif"
+  },
+  "Tulpen One": {
+    "category": "display"
+  },
+  "Turret Road": {
+    "category": "display"
+  },
+  "Ubuntu": {
+    "category": "sans-serif"
+  },
+  "Ubuntu Condensed": {
+    "category": "sans-serif"
+  },
+  "Ubuntu Mono": {
+    "category": "monospace"
+  },
+  "Ultra": {
+    "category": "serif"
+  },
+  "Uncial Antiqua": {
+    "category": "display"
+  },
+  "Underdog": {
+    "category": "display"
+  },
+  "Unica One": {
+    "category": "display"
+  },
+  "UnifrakturCook": {
+    "category": "display"
+  },
+  "UnifrakturMaguntia": {
+    "category": "display"
+  },
+  "Unkempt": {
+    "category": "display"
+  },
+  "Unlock": {
+    "category": "display"
+  },
+  "Unna": {
+    "category": "serif"
+  },
+  "VT323": {
+    "category": "monospace"
+  },
+  "Vampiro One": {
+    "category": "display"
+  },
+  "Varela": {
+    "category": "sans-serif"
+  },
+  "Varela Round": {
+    "category": "sans-serif"
+  },
+  "Varta": {
+    "category": "sans-serif"
+  },
+  "Vast Shadow": {
+    "category": "display"
+  },
+  "Vesper Libre": {
+    "category": "serif"
+  },
+  "Viaoda Libre": {
+    "category": "display"
+  },
+  "Vibes": {
+    "category": "display"
+  },
+  "Vibur": {
+    "category": "handwriting"
+  },
+  "Vidaloka": {
+    "category": "serif"
+  },
+  "Viga": {
+    "category": "sans-serif"
+  },
+  "Voces": {
+    "category": "display"
+  },
+  "Volkhov": {
+    "category": "serif"
+  },
+  "Vollkorn": {
+    "category": "serif"
+  },
+  "Vollkorn SC": {
+    "category": "serif"
+  },
+  "Voltaire": {
+    "category": "sans-serif"
+  },
+  "Waiting for the Sunrise": {
+    "category": "handwriting"
+  },
+  "Wallpoet": {
+    "category": "display"
+  },
+  "Walter Turncoat": {
+    "category": "handwriting"
+  },
+  "Warnes": {
+    "category": "display"
+  },
+  "Wellfleet": {
+    "category": "display"
+  },
+  "Wendy One": {
+    "category": "sans-serif"
+  },
+  "Wire One": {
+    "category": "sans-serif"
+  },
+  "Work Sans": {
+    "category": "sans-serif"
+  },
+  "Yanone Kaffeesatz": {
+    "category": "sans-serif"
+  },
+  "Yantramanav": {
+    "category": "sans-serif"
+  },
+  "Yatra One": {
+    "category": "display"
+  },
+  "Yellowtail": {
+    "category": "handwriting"
+  },
+  "Yeon Sung": {
+    "category": "display"
+  },
+  "Yeseva One": {
+    "category": "display"
+  },
+  "Yesteryear": {
+    "category": "handwriting"
+  },
+  "Yrsa": {
+    "category": "serif"
+  },
+  "ZCOOL KuaiLe": {
+    "category": "display"
+  },
+  "ZCOOL QingKe HuangYou": {
+    "category": "display"
+  },
+  "ZCOOL XiaoWei": {
+    "category": "serif"
+  },
+  "Zeyada": {
+    "category": "handwriting"
+  },
+  "Zhi Mang Xing": {
+    "category": "handwriting"
+  },
+  "Zilla Slab": {
+    "category": "serif"
+  },
+  "Zilla Slab Highlight": {
+    "category": "display"
+  }
+}

@@ -25,8 +25,6 @@ export default <T extends HTMLElement>(elRef: Ref<T | null>) => {
 
           sizes.width = +borderBoxSize.inlineSize.toFixed(2);
           sizes.height = +borderBoxSize.blockSize.toFixed(2);
-
-          console.log('resize', entry);
         });
       });
     }

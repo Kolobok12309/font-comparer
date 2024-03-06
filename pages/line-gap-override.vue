@@ -75,6 +75,15 @@ const text = ref(defaultText);
 const { t } = useI18n({
   useScope: 'local',
 });
+/**
+ * При указании diplay: inline-block и line-height перестает влиять на фактическую высоту элемента
+ * При display: inline и line-height влияет
+ *
+ * При указании line-height, все свойства теряют возможность менять фактическую высоту,
+ * кроме size-adjust в случае переносов строк, из-за разной возможной ширины символов
+ * разнится кол-во строк текста для разных size-adjust
+ * Но высота одной строки при указании line-height ВСЕГДА одинакова
+ */
 </script>
 
 <i18n lang="json">

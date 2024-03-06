@@ -4,6 +4,27 @@
       {{ t('title') }}
     </h3>
 
+    <div
+      v-if="changeTarget"
+      class="my-2"
+    >
+      {{ t('targetFont') }}:
+
+      <FontFamilySelector v-model="compTarget" />
+    </div>
+
+    <div
+      v-if="changeSrc"
+      class="my-2"
+    >
+      {{ t('srcFont') }}:
+
+      <FontFamilySelector
+        v-model="compSrc"
+        fallback
+      />
+    </div>
+
     <p v-if="changeSizeAdjust">
       Size-adjust: <b>{{ sizeAdjust }}%</b>
 
@@ -113,9 +134,14 @@
 
 <script lang="ts" setup>
 const props = defineProps({
-  fontFamily: {
+  target: {
     type: String,
-    default: 'Some-custom',
+    default: 'Arial',
+  },
+
+  changeTarget: {
+    type: Boolean,
+    default: false,
   },
 
   src: {
@@ -123,7 +149,7 @@ const props = defineProps({
     default: 'Arial',
   },
 
-  changeFontFamily: {
+  changeSrc: {
     type: Boolean,
     default: false,
   },
@@ -190,7 +216,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits([
-  'update:fontFamily',
+  'update:target',
   'update:src',
   'update:sizeAdjust',
   'update:ascentOverride',
@@ -203,7 +229,7 @@ const emit = defineEmits([
 ]);
 
 const {
-  fontFamily: compFontFamily,
+  target: compTarget,
   src: compSrc,
   sizeAdjust: compSizeAdjust,
   ascentOverride: compAscentOverride,
@@ -224,6 +250,8 @@ const { t } = useI18n({
 {
   "en": {
     "title": "Preview settings",
+    "targetFont": "Target font",
+    "srcFont": "Fallback font",
     "ghost": "Ghost",
     "border": "Border",
     "size": "Show sizes",
@@ -231,6 +259,8 @@ const { t } = useI18n({
   },
   "ru": {
     "title": "Настройки превью",
+    "targetFont": "Целевой шрифт",
+    "srcFont": "Запасной шрифт",
     "ghost": "Призрак",
     "border": "Border",
     "size": "Показывать размеры",

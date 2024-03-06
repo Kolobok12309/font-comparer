@@ -5,7 +5,7 @@
     </h3>
 
     <FontFace
-      :fontFamily="fontFamily"
+      :fontFamily="fallbackFontFamilyName"
       :src="src"
       :sizeAdjust="sizeAdjust"
       :ascentOverride="ascentOverride"
@@ -152,9 +152,9 @@
 
 <script lang="ts" setup>
 const props = defineProps({
-  fontFamily: {
+  target: {
     type: String,
-    default: 'Some-custom',
+    default: 'Arial',
   },
 
   src: {
@@ -202,6 +202,8 @@ const props = defineProps({
     default: false,
   },
 });
+
+const fallbackFontFamilyName = computed(() => `${props.target}-${props.src}`);
 
 const { t } = useI18n({
   useScope: 'local',
@@ -267,11 +269,11 @@ onMounted(() => {
 .font-preview {
   &__text {
     &_orig {
-      font-family: v-bind(src);
+      font-family: v-bind(target);
     }
 
     &_adjusted {
-      font-family: v-bind(fontFamily);
+      font-family: v-bind(fallbackFontFamilyName);
     }
   }
 }
