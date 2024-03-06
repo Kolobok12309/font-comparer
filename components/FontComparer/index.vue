@@ -31,7 +31,9 @@
         v-if="lastCalc"
         class="ml-4"
       >
-        Last result <b>size-adjust</b>: {{ lastCalc.sizeAdjust }}, <b>(ascent-override + descent-override + line-gap-override)</b>: {{ lastCalc.lineHeightOpts }}
+        Last result <b>size-adjust</b>: {{ lastCalc.sizeAdjust }},
+        <b>(ascent-override + descent-override + line-gap-override)</b>:
+        {{ lastCalc.lineHeightOpts }}
       </span>
     </div>
 

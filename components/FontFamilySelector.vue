@@ -89,8 +89,7 @@ const { t } = useI18n({
 });
 </script>
 
-<style>
-</style>
+<style></style>
 
 <i18n lang="json">
 {

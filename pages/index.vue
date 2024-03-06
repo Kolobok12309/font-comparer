@@ -31,7 +31,7 @@
         >line-gap-override</NuxtLink
       >.
 
-      <br>
+      <br />
 
       <NuxtLink
         :to="localePath('/preview')"

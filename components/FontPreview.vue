@@ -40,7 +40,7 @@
         >
           {{ t('shortWidth') }}: {{ ghostOrigSizes.width }}
 
-          <br>
+          <br />
 
           {{ t('shortHeight') }}: {{ ghostOrigSizes.height }}
         </div>
@@ -68,7 +68,7 @@
         >
           {{ t('shortWidth') }}: {{ ghostAdjustSizes.width }}
 
-          <br>
+          <br />
 
           {{ t('shortHeight') }}: {{ ghostAdjustSizes.height }}
         </div>
@@ -106,7 +106,7 @@
           >
             {{ t('shortWidth') }}: {{ origSizes.width }}
 
-            <br>
+            <br />
 
             {{ t('shortHeight') }}: {{ origSizes.height }}
           </div>
@@ -140,7 +140,7 @@
           >
             {{ t('shortWidth') }}: {{ adjustSizes.width }}
 
-            <br>
+            <br />
 
             {{ t('shortHeight') }}: {{ adjustSizes.height }}
           </div>
