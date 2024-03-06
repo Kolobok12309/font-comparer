@@ -135,6 +135,9 @@ export default async (
 
   await rafPromise();
 
+  mainContainer.textContent = fallbackContainer.textContent = text
+    .split('')
+    .join('\n');
   mainContainer.style.whiteSpace = fallbackContainer.style.whiteSpace =
     'pre-line';
 
