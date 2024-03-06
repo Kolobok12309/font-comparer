@@ -41,7 +41,7 @@
       </NuxtLink>
     </Blockquote>
 
-    <FontComparer />
+    <FontComparer class="mt-4" />
   </div>
 </template>
 

@@ -35,7 +35,7 @@
       </span>
     </div>
 
-    <details>
+    <details class="mt-4">
       <summary class="cursor-pointer">Css <b>@font-face</b></summary>
 
       <FontFaceCssPreview
@@ -72,6 +72,11 @@ const { t } = useI18n({
 });
 
 const target = ref('Montserrat');
+let targetIsChanged = false;
+watch(target, () => {
+  targetIsChanged = true;
+});
+
 const src = ref('Arial');
 const assumption = ref(0);
 const text = ref(defaultText);
@@ -109,8 +114,24 @@ const onClickText = async () => {
 
   sizeAdjust.value = res.sizeAdjust;
   ascentOverride.value = res.lineHeightOpts;
-  console.log('res', res);
+  descentOverride.value = 0;
+  lineGapOverride.value = 0;
+  console.log(`res ${target.value}:${src.value}`, res);
 };
+onMounted(async () => {
+  // @ts-ignore
+  let fontFaces = [...(await document.fonts.ready)];
+  // Wait for loading default target
+  while (!fontFaces.find(({ family }) => target.value === family)) {
+    if (targetIsChanged) return;
+
+    await sleep(50);
+    // @ts-ignore
+    fontFaces = [...(await document.fonts.ready)];
+  }
+
+  await onClickText();
+});
 </script>
 
 <i18n lang="json">
