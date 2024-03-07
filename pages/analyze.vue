@@ -37,7 +37,9 @@
         v-if="lastCalc"
         class="ml-4"
       >
-        Last result <b>ascent-override</b>: {{ lastCalc.ascentOverride }}, <b>descent-override</b>: {{ lastCalc.descentOverride }}, <b>line-gap-override</b>: {{ lastCalc.lineGapOverride }}
+        Last result <b>ascent-override</b>: {{ lastCalc.ascentOverride }},
+        <b>descent-override</b>: {{ lastCalc.descentOverride }},
+        <b>line-gap-override</b>: {{ lastCalc.lineGapOverride }}
       </span>
     </div>
 
