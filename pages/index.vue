@@ -1,6 +1,6 @@
 <template>
   <div class="bg-slate-900 rounded-md p-6">
-    <PageHeader> Font comparer </PageHeader>
+    <PageHeader>Font comparer</PageHeader>
 
     <Blockquote>
       {{ t('utilDescription') }}

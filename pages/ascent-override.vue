@@ -2,7 +2,7 @@
   <div class="bg-slate-900 rounded-md p-6">
     <BackButton />
 
-    <PageHeader class="mt-2"> Ascent-override </PageHeader>
+    <PageHeader class="mt-2">Ascent-override</PageHeader>
 
     <Blockquote>
       The ascent-override CSS descriptor for the @font-face at-rule defines the

@@ -2,7 +2,7 @@
   <div class="bg-slate-900 rounded-md p-6">
     <BackButton />
 
-    <PageHeader class="mt-2"> Descent-override </PageHeader>
+    <PageHeader class="mt-2">Descent-override</PageHeader>
 
     <Blockquote>
       The <b>descent-override</b> CSS descriptor for the

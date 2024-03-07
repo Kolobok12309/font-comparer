@@ -2,7 +2,7 @@
   <div class="bg-slate-900 rounded-md p-6">
     <BackButton />
 
-    <PageHeader class="mt-2"> Size-adjust </PageHeader>
+    <PageHeader class="mt-2">Size-adjust</PageHeader>
 
     <Blockquote>
       The <b>size-adjust</b> CSS descriptor for the <b>@font-face</b> at-rule

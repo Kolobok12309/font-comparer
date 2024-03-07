@@ -2,7 +2,7 @@
   <div class="bg-slate-900 rounded-md p-6">
     <BackButton />
 
-    <PageHeader class="mt-2"> Line-gap-override </PageHeader>
+    <PageHeader class="mt-2">Line-gap-override</PageHeader>
 
     <Blockquote>
       The <b>line-gap-override</b> CSS descriptor for the
