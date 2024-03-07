@@ -1,1 +1,8 @@
-export default () => new Promise((res) => requestAnimationFrame(res));
+export default (cb = () => {}) =>
+  new Promise<void>((res) =>
+    requestAnimationFrame(() => {
+      cb();
+
+      res();
+    }),
+  );
