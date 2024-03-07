@@ -33,12 +33,20 @@
 
       <br />
 
+      Other utils
+
       <NuxtLink
         :to="localePath('/preview')"
         class="text-slate-300 hover:underline"
       >
-        Full preview
-      </NuxtLink>
+        Full preview</NuxtLink
+      >,
+
+      <NuxtLink
+        :to="localePath('/analyze')"
+        class="text-slate-300 hover:underline"
+        >Analyze font defaults</NuxtLink
+      >
     </Blockquote>
 
     <FontComparer class="mt-4" />

@@ -22,7 +22,7 @@
       <button
         class="bg-indigo-500 text-slate-200 py-2 px-4 rounded-sm disabled:opacity-75"
         :disabled="pending"
-        @click="onClickText"
+        @click="onClick"
       >
         {{ t('calc') }}
       </button>
@@ -68,15 +68,19 @@
 
 <script lang="ts" setup>
 import { defaultText } from '@/utils/consts';
+import {
+  calculateRootProperties,
+  calculateSeparateOverrideProperties,
+} from '~/utils/calculateFontProperties';
 
 const { t } = useI18n({
   useScope: 'local',
 });
 
 const target = ref('Montserrat');
-let targetIsChanged = false;
+const targetIsChanged = ref(false);
 watch(target, () => {
-  targetIsChanged = true;
+  targetIsChanged.value = true;
 });
 
 const src = ref('Arial');
@@ -99,11 +103,11 @@ watch([target, src], () => {
 });
 const pending = ref(false);
 
-const onClickText = async () => {
+const onClick = async () => {
   pending.value = true;
 
   console.time(`calculate text for ${target.value}:${src.value}`);
-  const res = await calculateFontProperties(
+  const res = await calculateRootProperties(
     target.value,
     src.value,
     text.value,
@@ -121,18 +125,15 @@ const onClickText = async () => {
   console.log(`res ${target.value}:${src.value}`, res);
 };
 onMounted(async () => {
-  // @ts-ignore
-  let fontFaces = [...(await document.fonts.ready)];
-  // Wait for loading default target
-  while (!fontFaces.find(({ family }) => target.value === family)) {
-    if (targetIsChanged) return;
+  try {
+    await fontLoadPromise(target.value, targetIsChanged);
 
-    await sleep(50);
-    // @ts-ignore
-    fontFaces = [...(await document.fonts.ready)];
+    await onClick();
+  } catch (err) {
+    if ((err as Error)?.message === 'Canceled') return;
+
+    throw err;
   }
-
-  await onClickText();
 });
 </script>
 
