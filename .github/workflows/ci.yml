@@ -31,7 +31,8 @@ jobs:
           cache: 'pnpm'
 
       - name: Setup turbo cache
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+        uses: rharkor/caching-for-turbo@v1.7
+        continue-on-error: true
 
       - name: Install dependencies
         run: pnpm install
@@ -63,7 +64,8 @@ jobs:
           cache: 'pnpm'
 
       - name: Setup turbo cache
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+        uses: rharkor/caching-for-turbo@v1.7
+        continue-on-error: true
 
       - name: Install dependencies
         run: pnpm install
