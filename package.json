@@ -12,10 +12,10 @@
     "url": "https://github.com/Kolobok12309/font-comparer.git"
   },
   "engines": {
-    "node": ">=24",
-    "pnpm": ">=10"
+    "node": "24.x",
+    "pnpm": "11.6.0"
   },
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@11.6.0",
   "files": [
     ".nuxt",
     "nuxt.config.ts",

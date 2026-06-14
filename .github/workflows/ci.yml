@@ -19,19 +19,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v6
 
-      - name: Use Node.js 24.x
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
           cache: 'pnpm'
 
       - name: Setup turbo cache
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+        uses: rharkor/caching-for-turbo@v2.3.12
+        continue-on-error: true
 
       - name: Install dependencies
         run: pnpm install
@@ -51,19 +52,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v6
 
-      - name: Use Node.js 24.x
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
           cache: 'pnpm'
 
       - name: Setup turbo cache
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+        uses: rharkor/caching-for-turbo@v2.3.12
+        continue-on-error: true
 
       - name: Install dependencies
         run: pnpm install
@@ -74,6 +76,7 @@ jobs:
   deploy:
     needs: [build, lint]
     name: Deploy to GH Pages
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
