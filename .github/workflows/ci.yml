@@ -31,7 +31,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Setup turbo cache
-        uses: rharkor/caching-for-turbo@v1.7
+        uses: rharkor/caching-for-turbo@v2.3.12
         continue-on-error: true
 
       - name: Install dependencies
@@ -64,7 +64,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Setup turbo cache
-        uses: rharkor/caching-for-turbo@v1.7
+        uses: rharkor/caching-for-turbo@v2.3.12
         continue-on-error: true
 
       - name: Install dependencies
