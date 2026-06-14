@@ -3,15 +3,7 @@
   "globalDependencies": ["pnpm-lock.yaml"],
   "tasks": {
     "build": {
-      "inputs": [
-        "pages/**",
-        "components/**",
-        "utils/**",
-        "public/**",
-        "nuxt.config.ts",
-        "i18n.config.ts",
-        "app.vue"
-      ],
+      "inputs": ["app/**", "public/**", "nuxt.config.ts", "i18n.config.ts"],
       "env": ["NUXT_APP_BASE_URL"],
       "outputs": [".nuxt/**", ".output/**", "dist/**"]
     },
@@ -20,13 +12,10 @@
         ".editorconfig",
         ".prettierrc",
         ".prettierignore",
-        "pages/**",
-        "components/**",
-        "utils/**",
+        "app/**",
         "public/**",
         "nuxt.config.ts",
-        "i18n.config.ts",
-        "app.vue"
+        "i18n.config.ts"
       ]
     },
     "dev": {
