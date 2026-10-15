@@ -1,25 +1,29 @@
 <template>
   <select v-model="compValue">
-    <optgroup :label="t('systemFonts')">
+    <optgroup
+      :label="t('systemFonts')"
+      :disabled="systemFontsPending"
+    >
       <option
-        v-for="fontName in systemFontNames"
-        :key="fontName"
-        :value="fontName"
+        v-for="font in uniqSystemFonts"
+        :key="font"
+        :value="font"
       >
-        {{ fontName }}
+        {{ font }}
       </option>
     </optgroup>
 
     <optgroup
-      v-if="googleFontNames.length && !fallback"
+      v-if="googleFonts.length && !fallback"
       label="Google fonts"
+      :disabled="googleFontsPending"
     >
       <option
-        v-for="fontName in googleFontNames"
-        :key="fontName"
-        :value="fontName"
+        v-for="font in googleFonts"
+        :key="font.family"
+        :value="font.family"
       >
-        {{ fontName }}
+        {{ font.family }}
       </option>
     </optgroup>
 
@@ -39,7 +43,7 @@
 </template>
 
 <script lang="ts" setup>
-import { systemFonts, googleFonts } from '@/utils/consts';
+import { useGoogleFonts, useSystemFonts } from '@/composables/fonts';
 
 const props = defineProps({
   modelValue: {
@@ -56,29 +60,26 @@ const emit = defineEmits(['update:modelValue']);
 
 const { modelValue: compValue } = useMapSync(emit, props);
 
-const googleFontNames = Object.keys(googleFonts);
-const systemFontNames = Object.keys(systemFonts);
+const {
+  pending: googleFontsPending,
+  list: googleFonts,
+  load: loadGoogleFont,
+} = useGoogleFonts();
+const {
+  pending: systemFontsPending,
+  list: systemFonts,
+  uniqFonts: uniqSystemFonts,
+} = useSystemFonts();
 const customFontNames = ref([]);
 
 watch(
-  compValue,
-  (newVal: string | null) => {
+  [compValue, googleFontsPending],
+  ([newVal, pending]) => {
     if (!process.client) return;
     if (!newVal) return;
-    if (googleFontNames.includes(newVal)) {
-      const linkId = `google-font-${newVal}`;
-
-      if (document.getElementById(linkId)) return;
-
-      const googleUrl = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(
-        newVal,
-      )}`;
-
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = googleUrl;
-      link.id = linkId;
-      document.head.appendChild(link);
+    if (pending) return;
+    if (googleFonts.value.some(({ family }) => family === newVal)) {
+      loadGoogleFont({ family: newVal });
     }
   },
   { immediate: true },

@@ -1,119 +1,83 @@
 import { getRandomString } from './random';
+import { calculateNearArg, createContainersAndFontFace } from './common';
 
-export const calculateNearArg = async (
-  targetValue: number,
-  src: number,
-  execFunc: (src: number) => number | Promise<number>,
-  assumption: number = 0,
-): Promise<number> => {
-  const minTarget = targetValue - targetValue * assumption;
-  const maxTarget = targetValue + targetValue * assumption;
-  const checkValue = (v: number) => v >= minTarget && v <= maxTarget;
-
-  let step: number = 1;
-  let direction: number = 1;
-
-  let startValue = await execFunc(src);
-  // console.log('target', targetValue, startValue);
-  if (checkValue(startValue)) return +src.toFixed(2);
-  if (startValue > targetValue) {
-    direction = -1;
-  }
-
-  let iterations: number = 0;
-  let prevDiv = Math.abs(targetValue - startValue);
-  while (step >= 0.01 && iterations++ < 1000 && src > 0) {
-    src += step * direction;
-
-    const value = await execFunc(src);
-    const div = Math.abs(targetValue - value);
-
-    // console.log(`in:${src} out:${value}`);
-    if (checkValue(value)) {
-      // console.log(`Jackpot on ${iterations} iteration`);
-      return +src.toFixed(2);
-    }
-
-    if (
-      (value > targetValue && direction === 1) ||
-      (value < targetValue && direction === -1)
-    ) {
-      // console.log('anomaly', prevDiv, div, step);
-      // Check what value more near, prev or current
-      if (div > prevDiv) {
-        // rollback prev src
-        // and not change prevDiv
-        src -= step * direction;
-        // Change direction if current
-      } else {
-        direction *= -1;
-        prevDiv = div;
-      }
-
-      step *= 0.1;
-    } else {
-      prevDiv = div;
-    }
-  }
-
-  // console.log('out', src, iterations);
-
-  return +src.toFixed(2);
-};
-
-const createContainersAndFontFace = async (
+const calculateAscentDescentFromSum = async (
   targetFontFamily: string,
   fallbackFontFamily: string,
   text: string,
+  fontFace: CSSFontFaceRule,
+  overrideSum: number,
 ) => {
-  const fontStyle = document.createElement('style');
-  const fontName = `font-${getRandomString()}-fallback`;
-  fontStyle.id = fontName;
-  fontStyle.textContent = `
-  @font-face {
-    font-family: '${fontName}';
-    src: local("${fallbackFontFamily}");
-  }`;
+  const size = '40px';
 
-  document.head.appendChild(fontStyle);
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d')!;
 
-  const fontFace = document.styleSheets[fontName as any]
-    .cssRules[0] as CSSFontFaceRule;
+  // document.body.appendChild(canvas);
 
-  const container = document.createElement('div');
-  container.style.opacity = '0';
+  ctx.font = `${size} "${targetFontFamily}"`;
+  const targetMeasure = ctx.measureText(text);
+  console.log(targetMeasure);
 
-  const mainContainer = document.createElement('span');
-  mainContainer.style.fontFamily = `"${targetFontFamily}"`;
+  // fontFace.style.sizeAdjust = '100%';
+  // fontFace.style.ascentOverride = '100%';
+  // fontFace.style.descentOverride = '0%';
+  ctx.font = `${size} ${fontFace.style.fontFamily}`;
+  let currentFallbackMeasure = ctx.measureText(text);
+  console.log(currentFallbackMeasure);
 
-  const fallbackContainer = document.createElement('span');
-  fallbackContainer.style.fontFamily = `"${fontName}"`;
+  // const sizeAdjust = await calculateNearArg(
+  //   targetMeasure.width,
+  //   overrideSum,
+  //   async (v) => {
+  //     await rafPromise();
 
-  mainContainer.style.whiteSpace = fallbackContainer.style.whiteSpace =
-    'nowrap';
-  mainContainer.style.lineHeight = fallbackContainer.style.lineHeight =
-    'normal';
-  mainContainer.style.display = fallbackContainer.style.display =
-    'inline-block';
+  //     fontFace.style.sizeAdjust = `${v}%`;
 
-  container.appendChild(mainContainer);
-  container.appendChild(document.createElement('br'));
-  container.appendChild(fallbackContainer);
+  //     return ctx.measureText(text).width;
+  //   },
+  //   0,
+  // );
 
-  mainContainer.textContent = fallbackContainer.textContent = text;
+  const ascentOverride = await calculateNearArg(
+    targetMeasure.fontBoundingBoxAscent,
+    overrideSum,
+    async (v) => {
+      await rafPromise();
 
-  await rafPromise(() => {
-    document.body.appendChild(container);
-  });
+      fontFace.style.ascentOverride = `${v}%`;
+
+      return ctx.measureText(text).fontBoundingBoxAscent;
+    },
+    0,
+  );
+
+  const descentOverride = await calculateNearArg(
+    targetMeasure.fontBoundingBoxDescent,
+    overrideSum - ascentOverride,
+    async (v) => {
+      await rafPromise();
+
+      fontFace.style.descentOverride = `${v}%`;
+
+      return ctx.measureText(text).fontBoundingBoxDescent;
+    },
+    0,
+  );
+
+  console.log(ctx.measureText(text));
+
+  // console.log('sizeAdjust', sizeAdjust);
+  // const ascentOverride = overrideSum;
+  console.log('ascent', ascentOverride);
+  // const descentOverride = overrideSum - ascentOverride;
+  console.log('descent', descentOverride);
+
+  canvas.remove();
 
   return {
-    mainContainer,
-    fallbackContainer,
-    fontFace,
-    cleanup: () => {
-      container.remove();
-      fontStyle.remove();
-    },
+    ascentOverride,
+    descentOverride,
   };
 };
 
@@ -133,7 +97,9 @@ export const calculateRootProperties = async (
   assumption: number = 0,
 ): Promise<{
   sizeAdjust: number;
-  lineHeightOpts: number;
+  ascentOverride: number;
+  descentOverride: number;
+  lineGapOverride: number;
 }> => {
   const { mainContainer, fallbackContainer, fontFace, cleanup } =
     await createContainersAndFontFace(
@@ -142,142 +108,166 @@ export const calculateRootProperties = async (
       text,
     );
 
-  await rafPromise(() => {
-    fontFace.style.sizeAdjust = '100%';
-    fontFace.style.ascentOverride = '100%';
-    fontFace.style.descentOverride = '0%';
-    fontFace.style.lineGapOverride = '0%';
-  });
+  mainContainer.style.whiteSpace = fallbackContainer.style.whiteSpace =
+    'nowrap';
+  mainContainer.style.lineHeight = fallbackContainer.style.lineHeight =
+    'normal';
+  mainContainer.style.display = fallbackContainer.style.display =
+    'inline-block';
+
+  // Сперва вычисляется sizeAdjust, единственный параметр который влияет на ширину текста
+  await rafPromise();
+
+  // Обнуляем все параметры
+  fontFace.style.sizeAdjust = '100%';
+  fontFace.style.ascentOverride = '100%';
+  fontFace.style.descentOverride = '0%';
+  fontFace.style.lineGapOverride = '0%';
+
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d')!;
+  const size = '40px';
 
   console.time('load-font');
   await document.fonts.ready;
   console.timeEnd('load-font');
 
-  const startWidth = mainContainer.getBoundingClientRect()['width'];
-  const srcWidth = fallbackContainer.getBoundingClientRect()['width'];
+  ctx.font = `${size} "${targetFontFamily}"`;
+  const targetMeasure = ctx.measureText(text);
+  console.log(targetMeasure);
+
+  ctx.font = `${size} ${fontFace.style.fontFamily}`;
+  const startMeasure = ctx.measureText(text);
+  console.log(startMeasure);
+
+  await rafPromise();
+
   const sizeAdjust = await calculateNearArg(
-    startWidth,
-    (startWidth / srcWidth) * 100,
+    targetMeasure.width,
+    (targetMeasure.width / startMeasure.width) * 100,
     async (v) => {
-      await rafPromise(() => {
-        fontFace.style.sizeAdjust = `${v}%`;
-      });
+      await rafPromise();
 
-      return fallbackContainer.getBoundingClientRect()['width'];
+      fontFace.style.sizeAdjust = `${v}%`;
+      console.log('sizeAdjust', v, ctx.measureText(text).width);
+
+      return ctx.measureText(text).width;
     },
-    assumption,
+    0,
   );
+  fontFace.style.sizeAdjust = `${sizeAdjust}%`;
 
-  await rafPromise(() => {
-    mainContainer.textContent = fallbackContainer.textContent = text
-      .split('')
-      .join('\n');
-    mainContainer.style.whiteSpace = fallbackContainer.style.whiteSpace =
-      'pre-line';
-  });
+  console.log(
+    'size-adjust res',
+    sizeAdjust,
+    ctx.measureText(text),
+    targetMeasure,
+  );
+  await rafPromise();
 
-  await sleep(20);
-
-  const startHeight = mainContainer.getBoundingClientRect()['height'];
-  const srcHeight = fallbackContainer.getBoundingClientRect()['height'];
   const ascentOverride = await calculateNearArg(
-    startHeight,
-    (startHeight / srcHeight) * 100,
+    targetMeasure.fontBoundingBoxAscent,
+    100,
     async (v) => {
-      await rafPromise(() => {
-        fontFace.style.ascentOverride = `${v}%`;
-      });
+      await rafPromise();
 
-      return fallbackContainer.getBoundingClientRect()['height'];
+      fontFace.style.ascentOverride = `${v}%`;
+      console.log('ascent', v, ctx.measureText(text).fontBoundingBoxAscent);
+
+      return ctx.measureText(text).fontBoundingBoxAscent;
     },
-    assumption,
+    0,
   );
+  fontFace.style.ascentOverride = `${ascentOverride}%`;
 
-  await rafPromise(() => {
-    cleanup();
-  });
+  console.log(
+    'ascent-override res',
+    ascentOverride,
+    ctx.measureText(text),
+    targetMeasure,
+  );
+  await rafPromise();
+
+  const descentOverride = await calculateNearArg(
+    targetMeasure.fontBoundingBoxDescent,
+    // Не 0 чтобы не сломать условие внутри calculateNearArg "src > 0"
+    0.001,
+    async (v) => {
+      await rafPromise();
+
+      fontFace.style.descentOverride = `${v}%`;
+      console.log('descent', v, ctx.measureText(text).fontBoundingBoxDescent);
+
+      return ctx.measureText(text).fontBoundingBoxDescent;
+    },
+    0,
+  );
+  fontFace.style.descentOverride = `${descentOverride}%`;
+
+  console.log(
+    'descent res',
+    descentOverride,
+    ctx.measureText(text),
+    targetMeasure,
+  );
+  // const startWidth = mainContainer.getBoundingClientRect()['width'];
+  // const srcWidth = fallbackContainer.getBoundingClientRect()['width'];
+  // const sizeAdjust = await calculateNearArg(
+  //   startWidth,
+  //   (startWidth / srcWidth) * 100,
+  //   async (v) => {
+  //     await rafPromise();
+
+  //     fontFace.style.sizeAdjust = `${v}%`;
+
+  //     return fallbackContainer.getBoundingClientRect()['width'];
+  //   },
+  //   assumption,
+  // );
+
+  // Теперь выводим текст в столбик с максимальными переносами
+  // чтобы получить параметры для ascent-overrid, descent-override, line-gap-override
+  // На высоту влияет их сумма
+  // mainContainer.textContent = fallbackContainer.textContent = text
+  //   .split('')
+  //   .join('\n');
+  // mainContainer.style.whiteSpace = fallbackContainer.style.whiteSpace =
+  //   'pre-line';
+
+  // await sleep(20);
+
+  // const startHeight = mainContainer.getBoundingClientRect()['height'];
+  // const srcHeight = fallbackContainer.getBoundingClientRect()['height'];
+  // const overrideSum = await calculateNearArg(
+  //   startHeight,
+  //   (startHeight / srcHeight) * 100,
+  //   async (v) => {
+  //     await rafPromise();
+
+  //     fontFace.style.ascentOverride = `${v}%`;
+
+  //     return fallbackContainer.getBoundingClientRect()['height'];
+  //   },
+  //   assumption,
+  // );
+
+  await rafPromise();
+
+  // const { ascentOverride, descentOverride } =
+  //   await calculateAscentDescentFromSum(
+  //     targetFontFamily,
+  //     fallbackFontFamily,
+  //     text,
+  //     fontFace,
+  //     overrideSum,
+  //   );
+
+  cleanup();
 
   return {
     sizeAdjust,
-    lineHeightOpts: ascentOverride,
-  };
-};
-
-export const calculateSeparateOverrideProperties = async (
-  fontFamily: string,
-  text: string,
-  assumption: number = 0,
-) => {
-  const { mainContainer, fallbackContainer, fontFace, cleanup } =
-    await createContainersAndFontFace(
-      fontFamily,
-      fontFamily,
-      text.split('').join('\n'),
-    );
-
-  console.time('load-font');
-  await document.fonts.ready;
-  console.timeEnd('load-font');
-
-  const targetHeight = mainContainer.getBoundingClientRect()['height'];
-
-  const ascentOverride = await calculateNearArg(
-    targetHeight,
-    100,
-    async (v) => {
-      await rafPromise(() => {
-        fontFace.style.ascentOverride = `${v}%`;
-      });
-
-      return fallbackContainer.getBoundingClientRect()['height'];
-    },
-    assumption,
-  );
-
-  await rafPromise(() => {
-    fontFace.style.ascentOverride = null;
-  });
-
-  const descentOverride = await calculateNearArg(
-    targetHeight,
-    // Avg value
-    20,
-    async (v) => {
-      await rafPromise(() => {
-        fontFace.style.descentOverride = `${v}%`;
-      });
-
-      return fallbackContainer.getBoundingClientRect()['height'];
-    },
-    assumption,
-  );
-
-  await rafPromise(() => {
-    fontFace.style.descentOverride = null;
-  });
-
-  const lineGapOverride = await calculateNearArg(
-    targetHeight,
-    // Avg value
-    5,
-    async (v) => {
-      await rafPromise(() => {
-        fontFace.style.lineGapOverride = `${v}%`;
-      });
-
-      return fallbackContainer.getBoundingClientRect()['height'];
-    },
-    assumption,
-  );
-
-  await rafPromise(() => {
-    fontFace.style.lineGapOverride = null;
-    cleanup();
-  });
-
-  return {
     ascentOverride,
     descentOverride,
-    lineGapOverride,
+    lineGapOverride: 0,
   };
 };

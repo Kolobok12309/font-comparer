@@ -60,7 +60,7 @@
 
 <script lang="ts" setup>
 import { defaultText } from '@/utils/consts';
-import { calculateSeparateOverrideProperties } from '#imports';
+import { analyzeFontByDom } from '@/utils/analyze';
 
 const { t } = useI18n({
   useScope: 'local',
@@ -76,11 +76,7 @@ const border = ref(true);
 const size = ref(true);
 const text = ref(defaultText);
 
-const lastCalc = ref<{
-  ascentOverride: number;
-  descentOverride: number;
-  lineGapOverride: number;
-} | null>(null);
+const lastCalc = ref<Awaited<ReturnType<typeof analyzeFontByDom>> | null>(null);
 watch(fontFamily, () => {
   lastCalc.value = null;
 });
@@ -90,7 +86,7 @@ const onClick = async () => {
   pending.value = true;
 
   console.time(`calculate properties for ${fontFamily.value}`);
-  const res = await calculateSeparateOverrideProperties(
+  const res = await analyzeFontByDom(
     fontFamily.value,
     text.value,
   );
