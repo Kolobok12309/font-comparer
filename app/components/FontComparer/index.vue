@@ -68,10 +68,7 @@
 
 <script lang="ts" setup>
 import { defaultText } from '@/utils/consts';
-import {
-  calculateRootProperties,
-  calculateSeparateOverrideProperties,
-} from '~/utils/calculateFontProperties';
+import { calculateRootProperties } from '~/utils/calculateFontProperties';
 
 const { t } = useI18n({
   useScope: 'local',
@@ -94,10 +91,7 @@ const lineGapOverride = ref(0);
 const ghost = ref(false);
 const border = ref(false);
 
-const lastCalc = ref<{
-  sizeAdjust: number;
-  lineHeightOpts: number;
-} | null>(null);
+const lastCalc = ref<Awaited<ReturnType<typeof calculateRootProperties>> | null>(null);
 watch([target, src], () => {
   lastCalc.value = null;
 });
@@ -119,9 +113,9 @@ const onClick = async () => {
   lastCalc.value = res;
 
   sizeAdjust.value = res.sizeAdjust;
-  ascentOverride.value = res.lineHeightOpts;
-  descentOverride.value = 0;
-  lineGapOverride.value = 0;
+  ascentOverride.value = res.ascentOverride;
+  descentOverride.value = res.descentOverride;
+  lineGapOverride.value = res.lineGapOverride;
   console.log(`res ${target.value}:${src.value}`, res);
 };
 onMounted(async () => {
