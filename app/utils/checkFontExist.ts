@@ -1,4 +1,5 @@
 import { enAlphabet } from './consts';
+import { cssString } from './fontFile';
 
 export const checkFontExistByFamily = (family: string) => {
   const text = enAlphabet;
@@ -10,7 +11,7 @@ export const checkFontExistByFamily = (family: string) => {
   ctx.font = `${size} "__definitely_missing__", monospace`;
   const fallbackWidth = ctx.measureText(text).width;
 
-  ctx.font = `${size} "${family}", monospace`;
+  ctx.font = `${size} ${cssString(family)}, monospace`;
   const testWidth = ctx.measureText(text).width;
 
   canvas.remove();

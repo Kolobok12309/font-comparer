@@ -1,3 +1,6 @@
+import { getCustomFontUrl } from '@/composables/fonts/custom-fonts';
+import { cssString } from './fontFile';
+
 /**
  * Функция для вычисления значений src путем подбора наиболее близкого значения
  * к target
@@ -85,13 +88,14 @@ export const createContainersAndFontFace = async (
   fallbackFontFamily: string,
   text: string,
 ) => {
+  const customUrl = getCustomFontUrl(fallbackFontFamily);
   const fontStyle = document.createElement('style');
   const fontName = `font-${getRandomString()}-fallback`;
   fontStyle.id = fontName;
   fontStyle.textContent = `
   @font-face {
-    font-family: '${fontName}';
-    src: local("${fallbackFontFamily}");
+    font-family: ${cssString(fontName, "'")};
+    src: ${customUrl ? `url("${customUrl}")` : `local(${cssString(fallbackFontFamily)})`};
   }`;
 
   document.head.appendChild(fontStyle);
@@ -103,10 +107,10 @@ export const createContainersAndFontFace = async (
   container.style.opacity = '0';
 
   const mainContainer = document.createElement('span');
-  mainContainer.style.fontFamily = `"${targetFontFamily}"`;
+  mainContainer.style.fontFamily = cssString(targetFontFamily);
 
   const fallbackContainer = document.createElement('span');
-  fallbackContainer.style.fontFamily = `"${fontName}"`;
+  fallbackContainer.style.fontFamily = cssString(fontName);
 
   container.appendChild(mainContainer);
   container.appendChild(document.createElement('br'));
@@ -117,13 +121,29 @@ export const createContainersAndFontFace = async (
   await rafPromise();
   document.body.appendChild(container);
 
+  const cleanup = () => {
+    container.remove();
+    fontStyle.remove();
+  };
+
+  if (customUrl) {
+    let loaded = false;
+    try {
+      await document.fonts.load(`40px ${cssString(fontName)}`);
+      loaded = document.fonts.check(`40px ${cssString(fontName)}`);
+    } catch (error) {
+      console.error(error);
+    }
+    if (!loaded) {
+      cleanup();
+      throw new Error(`Custom font "${fallbackFontFamily}" failed to load`);
+    }
+  }
+
   return {
     mainContainer,
     fallbackContainer,
     fontFace,
-    cleanup: () => {
-      container.remove();
-      fontStyle.remove();
-    },
+    cleanup,
   };
 };

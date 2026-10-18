@@ -17,9 +17,7 @@
     </div>
 
     <div class="mt-4">
-      <h2 class="text-xl text-slate-200 font-medium">
-        Google fonts
-      </h2>
+      <h2 class="text-xl text-slate-200 font-medium">Google fonts</h2>
     </div>
   </div>
 </template>

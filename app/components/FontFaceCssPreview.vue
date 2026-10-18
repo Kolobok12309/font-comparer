@@ -1,8 +1,11 @@
 <template>
-  <pre>{{ text }}</pre>
+  <pre class="max-w-full overflow-x-auto">{{ text }}</pre>
 </template>
 
 <script lang="ts" setup>
+import { getCustomFont } from '@/composables/fonts/custom-fonts';
+import { cssString, stripCustomSuffix } from '@/utils/fontFile';
+
 const props = defineProps({
   fontFamily: {
     type: String,
@@ -35,12 +38,26 @@ const props = defineProps({
   },
 });
 
+const custom = computed(() => getCustomFont(props.src));
+
 const text = computed(() => {
   const parts = [
     '@font-face {',
-    `  font-family: "${props.fontFamily}";`,
-    `  src: local('${props.src}');`,
+    `  font-family: ${cssString(props.fontFamily)};`,
+    `  src: local(${cssString(custom.value ? stripCustomSuffix(props.src) : props.src, "'")});`,
   ];
+
+  if (custom.value) {
+    const format = {
+      woff2: 'woff2',
+      woff: 'woff',
+      ttf: 'truetype',
+      otf: 'opentype',
+    }[custom.value.format];
+    parts.push(
+      `  /* replace local() with url('/fonts/${custom.value.fileName}') format('${format}') */`,
+    );
+  }
 
   if (props.sizeAdjust !== null)
     parts.push(`  size-adjust: ${props.sizeAdjust}%;`);

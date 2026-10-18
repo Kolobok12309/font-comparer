@@ -25,6 +25,11 @@
       />
     </div>
 
+    <CustomFontUpload
+      v-if="changeTarget || changeSrc"
+      class="my-2"
+    />
+
     <p v-if="changeSizeAdjust">
       Size-adjust: <b>{{ sizeAdjust }}%</b>
 

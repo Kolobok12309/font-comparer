@@ -28,7 +28,7 @@
     </optgroup>
 
     <optgroup
-      v-if="customFontNames.length && !fallback"
+      v-if="customFontNames.length"
       :label="t('customFonts')"
     >
       <option
@@ -43,7 +43,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useGoogleFonts, useSystemFonts } from '@/composables/fonts';
+import {
+  useCustomFonts,
+  useGoogleFonts,
+  useSystemFonts,
+} from '@/composables/fonts';
 
 const props = defineProps({
   modelValue: {
@@ -70,7 +74,11 @@ const {
   list: systemFonts,
   uniqFonts: uniqSystemFonts,
 } = useSystemFonts();
-const customFontNames = ref([]);
+const { names: customFontNames, lastRename } = useCustomFonts();
+
+watch(lastRename, (rename) => {
+  if (rename && compValue.value === rename.from) compValue.value = rename.to;
+});
 
 watch(
   [compValue, googleFontsPending],
