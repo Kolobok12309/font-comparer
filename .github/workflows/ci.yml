@@ -6,6 +6,11 @@ concurrency:
 
 on:
   workflow_dispatch:
+    inputs:
+      deploy:
+        description: Deploy to GH pages
+        type: boolean
+        default: false
 
   push:
     branches:
@@ -103,7 +108,7 @@ jobs:
   deploy:
     needs: [build, lint, test]
     name: Deploy to GH Pages
-    if: github.event_name != 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master')
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'workflow_dispatch' && inputs.deploy)
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
