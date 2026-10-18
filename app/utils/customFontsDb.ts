@@ -72,6 +72,7 @@ export async function getAllCustomFonts(): Promise<StoredCustomFont[]> {
   const db = await openDb();
   const tx = db.transaction(STORE_NAME, 'readonly');
   const done = transactionDone(tx);
+  void done.catch(() => {});
   const fonts = await requestToPromise<StoredCustomFont[]>(
     tx.objectStore(STORE_NAME).getAll(),
   );
