@@ -204,6 +204,10 @@ const props = defineProps({
 });
 
 const fallbackFontFamilyName = computed(() => `${props.target}-${props.src}`);
+const targetFontCss = computed(() => JSON.stringify(props.target));
+const fallbackFontCss = computed(() =>
+  JSON.stringify(fallbackFontFamilyName.value),
+);
 
 const { t } = useI18n({
   useScope: 'local',
@@ -269,11 +273,11 @@ onMounted(() => {
 .font-preview {
   &__text {
     &_orig {
-      font-family: v-bind(target);
+      font-family: v-bind(targetFontCss);
     }
 
     &_adjusted {
-      font-family: v-bind(fallbackFontFamilyName);
+      font-family: v-bind(fallbackFontCss);
     }
   }
 }

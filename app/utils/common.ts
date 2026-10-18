@@ -1,3 +1,5 @@
+import { getCustomFontUrl } from '@/composables/fonts/custom-fonts';
+
 /**
  * Функция для вычисления значений src путем подбора наиболее близкого значения
  * к target
@@ -85,13 +87,14 @@ export const createContainersAndFontFace = async (
   fallbackFontFamily: string,
   text: string,
 ) => {
+  const customUrl = getCustomFontUrl(fallbackFontFamily);
   const fontStyle = document.createElement('style');
   const fontName = `font-${getRandomString()}-fallback`;
   fontStyle.id = fontName;
   fontStyle.textContent = `
   @font-face {
     font-family: '${fontName}';
-    src: local("${fallbackFontFamily}");
+    src: ${customUrl ? `url("${customUrl}")` : `local("${fallbackFontFamily}")`};
   }`;
 
   document.head.appendChild(fontStyle);
@@ -117,13 +120,29 @@ export const createContainersAndFontFace = async (
   await rafPromise();
   document.body.appendChild(container);
 
+  const cleanup = () => {
+    container.remove();
+    fontStyle.remove();
+  };
+
+  if (customUrl) {
+    let loaded = false;
+    try {
+      await document.fonts.load(`40px "${fontName}"`);
+      loaded = document.fonts.check(`40px "${fontName}"`);
+    } catch (error) {
+      console.error(error);
+    }
+    if (!loaded) {
+      cleanup();
+      throw new Error(`Custom font "${fallbackFontFamily}" failed to load`);
+    }
+  }
+
   return {
     mainContainer,
     fallbackContainer,
     fontFace,
-    cleanup: () => {
-      container.remove();
-      fontStyle.remove();
-    },
+    cleanup,
   };
 };
