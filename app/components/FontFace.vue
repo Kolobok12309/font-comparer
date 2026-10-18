@@ -5,6 +5,7 @@
 <script setup lang="ts">
 import { h } from 'vue';
 import { getCustomFontUrl } from '@/composables/fonts/custom-fonts';
+import { cssString } from '@/utils/fontFile';
 
 const props = defineProps({
   fontFamily: {
@@ -43,10 +44,10 @@ const customUrl = computed(() => getCustomFontUrl(props.src));
 const render = () => {
   const parts = [
     '@font-face {',
-    `  font-family: "${props.fontFamily}";`,
+    `  font-family: ${cssString(props.fontFamily)};`,
     customUrl.value
       ? `  src: url("${customUrl.value}");`
-      : `  src: local('${props.src}');`,
+      : `  src: local(${cssString(props.src, "'")});`,
   ];
 
   if (props.sizeAdjust !== null)

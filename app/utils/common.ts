@@ -1,4 +1,5 @@
 import { getCustomFontUrl } from '@/composables/fonts/custom-fonts';
+import { cssString } from './fontFile';
 
 /**
  * Функция для вычисления значений src путем подбора наиболее близкого значения
@@ -93,8 +94,8 @@ export const createContainersAndFontFace = async (
   fontStyle.id = fontName;
   fontStyle.textContent = `
   @font-face {
-    font-family: '${fontName}';
-    src: ${customUrl ? `url("${customUrl}")` : `local("${fallbackFontFamily}")`};
+    font-family: ${cssString(fontName, "'")};
+    src: ${customUrl ? `url("${customUrl}")` : `local(${cssString(fallbackFontFamily)})`};
   }`;
 
   document.head.appendChild(fontStyle);
@@ -106,10 +107,10 @@ export const createContainersAndFontFace = async (
   container.style.opacity = '0';
 
   const mainContainer = document.createElement('span');
-  mainContainer.style.fontFamily = `"${targetFontFamily}"`;
+  mainContainer.style.fontFamily = cssString(targetFontFamily);
 
   const fallbackContainer = document.createElement('span');
-  fallbackContainer.style.fontFamily = `"${fontName}"`;
+  fallbackContainer.style.fontFamily = cssString(fontName);
 
   container.appendChild(mainContainer);
   container.appendChild(document.createElement('br'));
@@ -128,8 +129,8 @@ export const createContainersAndFontFace = async (
   if (customUrl) {
     let loaded = false;
     try {
-      await document.fonts.load(`40px "${fontName}"`);
-      loaded = document.fonts.check(`40px "${fontName}"`);
+      await document.fonts.load(`40px ${cssString(fontName)}`);
+      loaded = document.fonts.check(`40px ${cssString(fontName)}`);
     } catch (error) {
       console.error(error);
     }

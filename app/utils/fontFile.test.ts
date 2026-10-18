@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 
 import {
   CustomFontError,
+  cssString,
   detectFontFormat,
   resolveFamilyName,
   stripCustomSuffix,
@@ -75,6 +76,51 @@ describe('stripCustomSuffix', () => {
     expect(stripCustomSuffix('Arial (custom) Bold')).toBe(
       'Arial (custom) Bold',
     );
+  });
+});
+
+describe('cssString', () => {
+  it('keeps ordinary names unchanged inside the requested quotes', () => {
+    expect(cssString('Arial-Arial (custom)')).toBe('"Arial-Arial (custom)"');
+    expect(cssString('Arial', "'")).toBe("'Arial'");
+    expect(cssString('')).toBe('""');
+  });
+
+  it('escapes only the enclosing quote character', () => {
+    expect(cssString('My "Q" Font')).toBe('"My \\22 Q\\22  Font"');
+    expect(cssString("O'Brien", "'")).toBe("'O\\27 Brien'");
+    expect(cssString("O'Brien")).toBe('"O\'Brien"');
+    expect(cssString('My "Q" Font', "'")).toBe('\'My "Q" Font\'');
+  });
+
+  it('preserves backslashes including those adjacent to quotes', () => {
+    expect(cssString('My\\Path Font')).toBe('"My\\5c Path Font"');
+    expect(cssString('A\\"B')).toBe('"A\\5c \\22 B"');
+    expect(cssString("A\\'B", "'")).toBe("'A\\5c \\27 B'");
+  });
+
+  it.each([
+    ['form feed', 'A\fB', '"A\\c B"'],
+    ['line feed', 'A\nB', '"A\\a B"'],
+    ['carriage return', 'A\rB', '"A\\d B"'],
+    ['CRLF', 'A\r\nB', '"A\\d \\a B"'],
+    ['tab', 'A\tB', '"A\\9 B"'],
+    ['first non-NUL control', 'A\u0001B', '"A\\1 B"'],
+    ['last C0 control', 'A\u001fB', '"A\\1f B"'],
+    ['DEL', 'A\u007fB', '"A\\7f B"'],
+    ['control before a hex digit', '\fA', '"\\c A"'],
+    ['control before a space', '\f A', '"\\c  A"'],
+    ['literal backslash and n', '\\n', '"\\5c n"'],
+  ])('preserves %s as the original code points', (_name, input, expected) => {
+    expect(cssString(input)).toBe(expected);
+  });
+
+  it('keeps controls distinct with single quotes too', () => {
+    expect(cssString('A\nFace\r\f\t', "'")).toBe("'A\\a Face\\d \\c \\9 '");
+  });
+
+  it('maps unrepresentable NUL to the CSS replacement character', () => {
+    expect(cssString('A\0B')).toBe('"A\uFFFDB"');
   });
 });
 

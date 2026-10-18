@@ -43,6 +43,16 @@ export const resolveFamilyName = (
 export const stripCustomSuffix = (name: string) =>
   name.replace(/\s\(custom(?: \d+)?\)$/, '');
 
+export const cssString = (value: string, quote: '"' | "'" = '"'): string =>
+  quote +
+  value.replace(/[\u0000-\u001f\u007f\\'"]/g, (char) => {
+    // CSS cannot represent NUL; its string value is U+FFFD instead.
+    if (char === '\0') return '\uFFFD';
+    if ((char === '"' || char === "'") && char !== quote) return char;
+    return `\\${char.charCodeAt(0).toString(16)} `;
+  }) +
+  quote;
+
 export type CustomFontErrorCode =
   | 'too-large'
   | 'quota-exceeded'

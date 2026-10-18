@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { getCustomFont } from '@/composables/fonts/custom-fonts';
-import { stripCustomSuffix } from '@/utils/fontFile';
+import { cssString, stripCustomSuffix } from '@/utils/fontFile';
 
 const props = defineProps({
   fontFamily: {
@@ -43,8 +43,8 @@ const custom = computed(() => getCustomFont(props.src));
 const text = computed(() => {
   const parts = [
     '@font-face {',
-    `  font-family: "${props.fontFamily}";`,
-    `  src: local('${custom.value ? stripCustomSuffix(props.src) : props.src}');`,
+    `  font-family: ${cssString(props.fontFamily)};`,
+    `  src: local(${cssString(custom.value ? stripCustomSuffix(props.src) : props.src, "'")});`,
   ];
 
   if (custom.value) {

@@ -1,5 +1,6 @@
 import { getRandomString } from './random';
 import { calculateNearArg, createContainersAndFontFace } from './common';
+import { cssString } from './fontFile';
 import {
   getLanguageProfile,
   mixProfiles,
@@ -29,7 +30,7 @@ const createCharWidthMeasurer = async (
   container.style.cssText =
     'position:absolute;visibility:hidden;left:-99999px;top:0';
   const uncovered: UncoveredCharacters = { target: [], fallback: [] };
-  const targetFamily = JSON.stringify(targetFontFamily);
+  const targetFamily = cssString(targetFontFamily);
   const fallbackFamily = fallbackFontFace.style.fontFamily;
   const chars = Object.keys(profile).join('');
 
@@ -137,7 +138,7 @@ const calculateAscentDescentFromSum = async (
 
   // document.body.appendChild(canvas);
 
-  ctx.font = `${size} "${targetFontFamily}"`;
+  ctx.font = `${size} ${cssString(targetFontFamily)}`;
   const targetMeasure = ctx.measureText(text);
   console.log(targetMeasure);
 
@@ -263,7 +264,7 @@ export const calculateRootProperties = async (
     await document.fonts.ready;
     console.timeEnd('load-font');
 
-    ctx.font = `${size} "${targetFontFamily}"`;
+    ctx.font = `${size} ${cssString(targetFontFamily)}`;
     const targetMeasure = ctx.measureText(text);
     console.log(targetMeasure);
 

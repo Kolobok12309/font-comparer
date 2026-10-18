@@ -151,6 +151,8 @@
 </template>
 
 <script lang="ts" setup>
+import { cssString } from '@/utils/fontFile';
+
 const props = defineProps({
   target: {
     type: String,
@@ -204,9 +206,9 @@ const props = defineProps({
 });
 
 const fallbackFontFamilyName = computed(() => `${props.target}-${props.src}`);
-const targetFontCss = computed(() => JSON.stringify(props.target));
+const targetFontCss = computed(() => cssString(props.target));
 const fallbackFontCss = computed(() =>
-  JSON.stringify(fallbackFontFamilyName.value),
+  cssString(fallbackFontFamilyName.value),
 );
 
 const { t } = useI18n({
