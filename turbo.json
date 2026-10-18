@@ -13,10 +13,14 @@
         ".prettierrc",
         ".prettierignore",
         "app/**",
+        "vitest.config.ts",
         "public/**",
         "nuxt.config.ts",
         "i18n.config.ts"
       ]
+    },
+    "test": {
+      "inputs": ["app/**", "vitest.config.ts", "package.json"]
     },
     "dev": {
       "cache": false,

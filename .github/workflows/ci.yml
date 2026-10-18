@@ -73,8 +73,34 @@ jobs:
       - name: Lint code
         run: pnpm exec turbo run lint
 
+  test:
+    name: Test code
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: 'pnpm'
+
+      - name: Setup turbo cache
+        uses: rharkor/caching-for-turbo@v2.3.12
+        continue-on-error: true
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Test code
+        run: pnpm exec turbo run test
+
   deploy:
-    needs: [build, lint]
+    needs: [build, lint, test]
     name: Deploy to GH Pages
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
