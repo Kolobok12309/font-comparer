@@ -319,7 +319,7 @@ export const calculateRootProperties = async (
 
           return ctx.measureText(text).width;
         },
-        0,
+        assumption,
       );
       fontFace.style.sizeAdjust = `${sizeAdjust}%`;
     }
@@ -343,7 +343,7 @@ export const calculateRootProperties = async (
 
         return ctx.measureText(text).fontBoundingBoxAscent;
       },
-      0,
+      assumption,
     );
     fontFace.style.ascentOverride = `${ascentOverride}%`;
 
@@ -367,7 +367,7 @@ export const calculateRootProperties = async (
 
         return ctx.measureText(text).fontBoundingBoxDescent;
       },
-      0,
+      assumption,
     );
     fontFace.style.descentOverride = `${descentOverride}%`;
 
