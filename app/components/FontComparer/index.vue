@@ -203,12 +203,21 @@ const ghost = ref(false);
 const border = ref(false);
 
 const lastCalc = ref<Awaited<ReturnType<typeof calculateRootProperties>> | null>(null);
-watch([target, src, method, profileId, mixRatio], () => {
-  lastCalc.value = null;
-});
+let calculationGeneration = 0;
+watch(
+  [target, src, method, profileId, mixRatio, text],
+  () => {
+    calculationGeneration++;
+    lastCalc.value = null;
+    calcError.value = null;
+    coverageWarning.value = null;
+  },
+  { flush: 'sync' },
+);
 const pending = ref(false);
 
 const onClick = async () => {
+  const generation = ++calculationGeneration;
   pending.value = true;
   calcError.value = null;
   coverageWarning.value = null;
@@ -236,6 +245,8 @@ const onClick = async () => {
       assumption.value,
       { method: method.value, profile },
     );
+    if (generation !== calculationGeneration) return;
+
     lastCalc.value = res;
     coverageWarning.value = res.uncovered;
 
@@ -245,6 +256,8 @@ const onClick = async () => {
     lineGapOverride.value = res.lineGapOverride;
     console.log(`res ${target.value}:${src.value}`, res);
   } catch (err) {
+    if (generation !== calculationGeneration) return;
+
     if (err instanceof FrequencyCoverageError) {
       calcError.value = t('coverageError');
       coverageWarning.value = err.uncovered;
