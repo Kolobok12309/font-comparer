@@ -103,7 +103,7 @@ jobs:
   deploy:
     needs: [build, lint, test]
     name: Deploy to GH Pages
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
